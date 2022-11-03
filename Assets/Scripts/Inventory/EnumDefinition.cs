@@ -21,6 +21,7 @@ public class EnumDefinition
     }
     public enum HighlightMode
     {
+        mouseTarget,
         moveRange,
         moveTarget,
         attackRange,

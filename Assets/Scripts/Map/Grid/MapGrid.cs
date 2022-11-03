@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class MapGrid : MonoBehaviour
 {
+
+    #region 变量
     [Tooltip("这是该脚本引用的持久化资源，不可被更改，在这里放入GridBase")]
     public MapGridBase baseGrid;
     [Tooltip("这是该脚本自己的MapUnit属性，应该更改的是这个")]
     public MapGridBase thisGrid;
     [Tooltip("格子的所有sprite素材，特效，粒子系统预制体等都在这个类里")]
     public GridInventory inventory;
+    [Tooltip("这是该物体的Outline Shader，以用于高亮，注意需要实例化一个之后再更改，不然的话所有的shader都会被改（已封装，不用管）")]
+    public Material thisOutlineMaterial;
+    #endregion
+
+    #region Map类需要调用的方法
     /// <summary>
     /// 根据全局变量thisGrid来更新当前地图单元
     /// </summary>
@@ -20,7 +27,7 @@ public class MapGrid : MonoBehaviour
          *这些也需要更新，我还没写
          *但是这里不包含高亮状态的更新
          */
-        switch(thisGrid.altitude)
+        switch (thisGrid.altitude)
         {
             case -3:
                 thisGrid.gridSprite = inventory.mountain3;
@@ -55,7 +62,32 @@ public class MapGrid : MonoBehaviour
     /// <param name="highLightMode">高亮模式，可以为NONE</param>
     public void HighlightGrid(EnumDefinition.HighlightMode highLightMode)
     {
-
+        switch (highLightMode)
+        {
+            case EnumDefinition.HighlightMode.mouseTarget:
+                thisOutlineMaterial.SetColor("lineColor", Color.grey);
+                thisOutlineMaterial.SetFloat("lineWidth", 20);
+                break;
+            case EnumDefinition.HighlightMode.attackTarget:
+                thisOutlineMaterial.SetColor("lineColor", Color.red);
+                thisOutlineMaterial.SetFloat("lineWidth", 20);
+                break;
+            case EnumDefinition.HighlightMode.attackRange:
+                thisOutlineMaterial.SetColor("lineColor", Color.green);
+                thisOutlineMaterial.SetFloat("lineWidth", 20);
+                break;
+            case EnumDefinition.HighlightMode.moveRange:
+                thisOutlineMaterial.SetColor("lineColor", Color.blue);
+                thisOutlineMaterial.SetFloat("lineWidth", 20);
+                break;
+            case EnumDefinition.HighlightMode.moveTarget:
+                thisOutlineMaterial.SetColor("lineColor", Color.black);
+                thisOutlineMaterial.SetFloat("lineWidth", 20);
+                break;
+            case EnumDefinition.HighlightMode.None:
+                thisOutlineMaterial.SetFloat("lineWidth", 0);
+                break;
+        }
     }
     /// <summary>
     /// 地图上的元素反应，输入某元素，改变Element，产生反应，并达到某效果
@@ -87,5 +119,23 @@ public class MapGrid : MonoBehaviour
     public void MapGridOnClick()
     {
 
+    }
+    #endregion
+
+    #region 自己需要调用的方法
+    /// <summary>
+    /// 这个方法用来生成一个单独的material，用来单独更改某一个gameobject的material而不至于全部更改  
+    /// </summary>
+    void MaterialInitialize()
+    {
+        thisOutlineMaterial = Instantiate(thisOutlineMaterial);
+        GetComponent<SpriteRenderer>().material = thisOutlineMaterial;
+    }
+    #endregion
+
+    private void Start()
+    {
+        MaterialInitialize();
+        UpdateGrid();//脚本实例化时进行一次更新
     }
 }
