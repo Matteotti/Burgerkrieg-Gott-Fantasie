@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b762feb45b4a64b9838e2df3b97c8b, type: 3}
+  m_Name: TestGridBase
+  m_EditorClassIdentifier: 
+  altitude: -2
+  hightLighted: 0
+  hexPos: {x: 0, y: 0, z: 0}
+  worldPos: {x: 0, y: 0, z: 0}
+  isOnTheFrontSide: 0
+  gridSprite: {fileID: 0}
+  gridElement: 0
+  specialGridType: 0

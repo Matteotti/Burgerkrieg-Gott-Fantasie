@@ -135,6 +135,7 @@ public class MapGrid : MonoBehaviour
 
     private void Start()
     {
+        thisGrid = Instantiate(baseGrid);
         MaterialInitialize();
         UpdateGrid();//脚本实例化时进行一次更新
     }

@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17207536}
   - component: {fileID: 17207537}
+  - component: {fileID: 17207538}
   m_Layer: 0
   m_Name: TestGrid (21)
   m_TagString: Untagged
@@ -175,7 +176,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -207,6 +208,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &17207538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17207535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &87740200
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 87740202}
   - component: {fileID: 87740201}
+  - component: {fileID: 87740203}
   m_Layer: 0
   m_Name: TestGrid
   m_TagString: Untagged
@@ -244,7 +262,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -291,6 +309,22 @@ Transform:
   m_Father: {fileID: 513823053}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &87740203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87740200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &218212694
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 218212695}
   - component: {fileID: 218212696}
+  - component: {fileID: 218212697}
   m_Layer: 0
   m_Name: TestGrid (22)
   m_TagString: Untagged
@@ -343,7 +378,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -375,6 +410,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &218212697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218212694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &263840068
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 263840069}
   - component: {fileID: 263840070}
+  - component: {fileID: 263840071}
   m_Layer: 0
   m_Name: TestGrid (29)
   m_TagString: Untagged
@@ -427,7 +479,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -459,6 +511,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &263840071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263840068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &345822968
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 345822969}
   - component: {fileID: 345822970}
+  - component: {fileID: 345822971}
   m_Layer: 0
   m_Name: TestGrid (16)
   m_TagString: Untagged
@@ -511,7 +580,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -543,6 +612,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &345822971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345822968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &464532314
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 464532315}
   - component: {fileID: 464532316}
+  - component: {fileID: 464532317}
   m_Layer: 0
   m_Name: TestGrid (1)
   m_TagString: Untagged
@@ -595,7 +681,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -627,6 +713,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &464532317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464532314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &513823052
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513823053}
   - component: {fileID: 513823054}
+  - component: {fileID: 513823055}
   m_Layer: 0
   m_Name: FrontMap
   m_TagString: Untagged
@@ -713,6 +816,23 @@ MonoBehaviour:
   gridLayoutGrounpLineGap: 0.42
   "\u5728\u8FD9\u91CC\u8F93\u5165\u8981\u67E5\u770B\u7684\u5750\u6807": {x: 0, y: 0}
   "\u4E8C\u7EF4\u6570\u7EC4\u67E5\u770B\u5668": {fileID: 0}
+--- !u!114 &513823055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513823052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2518c7f74c0ddd4290944bd679eb74d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridLayoutGrounpMaxRaw: 0
+  gridLayoutGrounpRawGap: 0
+  gridLayoutGrounpLineGap: 0
+  "\u5728\u8FD9\u91CC\u8F93\u5165\u8981\u67E5\u770B\u7684\u5750\u6807": {x: 0, y: 0}
+  "\u4E8C\u7EF4\u6570\u7EC4\u67E5\u770B\u5668": {fileID: 0}
 --- !u!1 &578470898
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 578470899}
   - component: {fileID: 578470900}
+  - component: {fileID: 578470901}
   m_Layer: 0
   m_Name: TestGrid (20)
   m_TagString: Untagged
@@ -765,7 +886,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -797,6 +918,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &578470901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578470898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &680289249
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 680289250}
   - component: {fileID: 680289251}
+  - component: {fileID: 680289252}
   m_Layer: 0
   m_Name: TestGrid (32)
   m_TagString: Untagged
@@ -849,7 +987,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -881,6 +1019,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &680289252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680289249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,6 +1139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871624015}
   - component: {fileID: 871624016}
+  - component: {fileID: 871624017}
   m_Layer: 0
   m_Name: TestGrid (12)
   m_TagString: Untagged
@@ -1027,7 +1182,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1059,6 +1214,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &871624017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871624014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &887774688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,6 +1240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887774689}
   - component: {fileID: 887774690}
+  - component: {fileID: 887774691}
   m_Layer: 0
   m_Name: TestGrid (35)
   m_TagString: Untagged
@@ -1111,7 +1283,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1143,6 +1315,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &887774691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887774688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &890463528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,6 +1390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 892655279}
   - component: {fileID: 892655280}
+  - component: {fileID: 892655281}
   m_Layer: 0
   m_Name: TestGrid (7)
   m_TagString: Untagged
@@ -1244,7 +1433,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1276,6 +1465,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &892655281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892655278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1058436027}
   - component: {fileID: 1058436028}
+  - component: {fileID: 1058436029}
   m_Layer: 0
   m_Name: TestGrid (25)
   m_TagString: Untagged
@@ -1412,7 +1618,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1444,6 +1650,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1058436029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058436026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1088243379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088243380}
   - component: {fileID: 1088243381}
+  - component: {fileID: 1088243382}
   m_Layer: 0
   m_Name: TestGrid (34)
   m_TagString: Untagged
@@ -1496,7 +1719,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1528,6 +1751,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1088243382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088243379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1093322885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,6 +1777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1093322886}
   - component: {fileID: 1093322887}
+  - component: {fileID: 1093322888}
   m_Layer: 0
   m_Name: TestGrid (13)
   m_TagString: Untagged
@@ -1580,7 +1820,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1612,6 +1852,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1093322888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093322885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1101929571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1101929572}
   - component: {fileID: 1101929573}
+  - component: {fileID: 1101929574}
   m_Layer: 0
   m_Name: TestGrid (9)
   m_TagString: Untagged
@@ -1664,7 +1921,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1696,6 +1953,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1101929574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101929571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1147213881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,6 +1979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1147213882}
   - component: {fileID: 1147213883}
+  - component: {fileID: 1147213884}
   m_Layer: 0
   m_Name: TestGrid (28)
   m_TagString: Untagged
@@ -1748,7 +2022,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1780,6 +2054,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1147213884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147213881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1180090771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,6 +2080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1180090772}
   - component: {fileID: 1180090773}
+  - component: {fileID: 1180090774}
   m_Layer: 0
   m_Name: TestGrid (36)
   m_TagString: Untagged
@@ -1832,7 +2123,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1864,6 +2155,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1180090774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180090771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1217097138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +2181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1217097139}
   - component: {fileID: 1217097140}
+  - component: {fileID: 1217097141}
   m_Layer: 0
   m_Name: TestGrid (3)
   m_TagString: Untagged
@@ -1916,7 +2224,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1948,6 +2256,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1217097141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217097138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1284672692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,6 +2282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1284672693}
   - component: {fileID: 1284672694}
+  - component: {fileID: 1284672695}
   m_Layer: 0
   m_Name: TestGrid (11)
   m_TagString: Untagged
@@ -2000,7 +2325,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2032,6 +2357,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1284672695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284672692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1321898680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,6 +2383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1321898681}
   - component: {fileID: 1321898682}
+  - component: {fileID: 1321898683}
   m_Layer: 0
   m_Name: TestGrid (14)
   m_TagString: Untagged
@@ -2084,7 +2426,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2116,6 +2458,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1321898683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321898680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1324301901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,6 +2484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1324301902}
   - component: {fileID: 1324301903}
+  - component: {fileID: 1324301904}
   m_Layer: 0
   m_Name: TestGrid (31)
   m_TagString: Untagged
@@ -2168,7 +2527,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2200,6 +2559,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1324301904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324301901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1429835752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,6 +2585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1429835753}
   - component: {fileID: 1429835754}
+  - component: {fileID: 1429835755}
   m_Layer: 0
   m_Name: TestGrid (18)
   m_TagString: Untagged
@@ -2252,7 +2628,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2284,6 +2660,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1429835755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429835752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1441974041
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,6 +2686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441974042}
   - component: {fileID: 1441974043}
+  - component: {fileID: 1441974044}
   m_Layer: 0
   m_Name: TestGrid (19)
   m_TagString: Untagged
@@ -2336,7 +2729,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2368,6 +2761,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1441974044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441974041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1448581324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,6 +2787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1448581325}
   - component: {fileID: 1448581326}
+  - component: {fileID: 1448581327}
   m_Layer: 0
   m_Name: TestGrid (10)
   m_TagString: Untagged
@@ -2420,7 +2830,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2452,6 +2862,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1448581327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448581324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1460998525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2462,6 +2888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1460998526}
   - component: {fileID: 1460998527}
+  - component: {fileID: 1460998528}
   m_Layer: 0
   m_Name: TestGrid (15)
   m_TagString: Untagged
@@ -2504,7 +2931,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2536,6 +2963,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1460998528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460998525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1478916911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478916912}
   - component: {fileID: 1478916913}
+  - component: {fileID: 1478916914}
   m_Layer: 0
   m_Name: TestGrid (33)
   m_TagString: Untagged
@@ -2588,7 +3032,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2620,6 +3064,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1478916914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478916911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1514518347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,6 +3090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1514518348}
   - component: {fileID: 1514518349}
+  - component: {fileID: 1514518350}
   m_Layer: 0
   m_Name: TestGrid (23)
   m_TagString: Untagged
@@ -2672,7 +3133,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2704,6 +3165,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1514518350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514518347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1536774601
 GameObject:
   m_ObjectHideFlags: 0
@@ -2714,6 +3191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1536774602}
   - component: {fileID: 1536774603}
+  - component: {fileID: 1536774604}
   m_Layer: 0
   m_Name: TestGrid (4)
   m_TagString: Untagged
@@ -2756,7 +3234,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2788,6 +3266,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1536774604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536774601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1599060284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,6 +3292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1599060285}
   - component: {fileID: 1599060286}
+  - component: {fileID: 1599060287}
   m_Layer: 0
   m_Name: TestGrid (6)
   m_TagString: Untagged
@@ -2840,7 +3335,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2872,6 +3367,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1599060287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599060284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1619913800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2882,6 +3393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1619913801}
   - component: {fileID: 1619913802}
+  - component: {fileID: 1619913803}
   m_Layer: 0
   m_Name: TestGrid (17)
   m_TagString: Untagged
@@ -2924,7 +3436,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2956,6 +3468,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1619913803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619913800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1689059837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2966,6 +3494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689059838}
   - component: {fileID: 1689059839}
+  - component: {fileID: 1689059840}
   m_Layer: 0
   m_Name: TestGrid (30)
   m_TagString: Untagged
@@ -3008,7 +3537,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3040,6 +3569,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1689059840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689059837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1789901766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,6 +3595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1789901767}
   - component: {fileID: 1789901768}
+  - component: {fileID: 1789901769}
   m_Layer: 0
   m_Name: TestGrid (2)
   m_TagString: Untagged
@@ -3092,7 +3638,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3124,6 +3670,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1789901769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789901766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1838874757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,6 +3696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1838874758}
   - component: {fileID: 1838874759}
+  - component: {fileID: 1838874760}
   m_Layer: 0
   m_Name: TestGrid (8)
   m_TagString: Untagged
@@ -3176,7 +3739,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3208,6 +3771,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1838874760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838874757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1857285042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,6 +3797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1857285043}
   - component: {fileID: 1857285044}
+  - component: {fileID: 1857285045}
   m_Layer: 0
   m_Name: TestGrid (5)
   m_TagString: Untagged
@@ -3260,7 +3840,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3292,6 +3872,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1857285045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857285042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1868166866
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,6 +3897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1868166867}
+  - component: {fileID: 1868166868}
   m_Layer: 0
   m_Name: HexMapManager
   m_TagString: Untagged
@@ -3325,6 +3922,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1868166868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868166866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f00719d42ea7ea4db412fcab6449a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  front: {fileID: 513823054}
+  back: {fileID: 890463530}
 --- !u!1 &1934318510
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,6 +3946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1934318511}
   - component: {fileID: 1934318512}
+  - component: {fileID: 1934318513}
   m_Layer: 0
   m_Name: TestGrid (27)
   m_TagString: Untagged
@@ -3377,7 +3989,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3409,6 +4021,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1934318513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934318510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &1945765041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,6 +4047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945765042}
   - component: {fileID: 1945765043}
+  - component: {fileID: 1945765044}
   m_Layer: 0
   m_Name: TestGrid (24)
   m_TagString: Untagged
@@ -3461,7 +4090,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3493,6 +4122,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1945765044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945765041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
 --- !u!1 &2137333459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3503,6 +4148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2137333460}
   - component: {fileID: 2137333461}
+  - component: {fileID: 2137333462}
   m_Layer: 0
   m_Name: TestGrid (26)
   m_TagString: Untagged
@@ -3577,3 +4223,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2137333462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137333459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e356e42e5203df43945e5388f169980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseGrid: {fileID: 11400000, guid: bf2d1be2d1d49bf49a7ae37b32adb1cb, type: 2}
+  thisGrid: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  thisOutlineMaterial: {fileID: 2100000, guid: d0d5da2e1191e5340bdbb81e0dc12650, type: 2}
