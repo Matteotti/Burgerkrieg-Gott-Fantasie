@@ -30,7 +30,7 @@ public class Map : MonoBehaviour
 
     #endregion
 
-    #region methods for class MapManager
+    #region methods for MapManager to use
 
     /// <summary>
     /// 这个函数将世界坐标转化为hexTilemap的cell坐标（注意类型是VECTOR3INT）并返回（要确保你的输入真的是一个格子的坐标，而不是随便弄的一个三维向量）
@@ -158,7 +158,7 @@ public class Map : MonoBehaviour
 
     #endregion
 
-    #region methods for Self
+    #region methods for Self to use
     /// <summary>
     /// 该函数将以自身坐标为起点，以类似于UnityGridLayoutGrounp的方式对其子物体进行重排列成六边形网格状，并且将相应格子存入MapGrids二维数组
     /// </summary>

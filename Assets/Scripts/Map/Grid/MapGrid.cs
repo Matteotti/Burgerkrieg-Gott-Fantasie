@@ -16,7 +16,7 @@ public class MapGrid : MonoBehaviour
     public Material thisOutlineMaterial;
     #endregion
 
-    #region methods for class Map
+    #region methods for Map to use
     /// <summary>
     /// 根据全局变量thisGrid来更新当前地图单元
     /// </summary>
@@ -122,7 +122,7 @@ public class MapGrid : MonoBehaviour
     }
     #endregion
 
-    #region methods for Self
+    #region methods for Self to use
     /// <summary>
     /// 这个方法用来生成一个单独的material，用来单独更改某一个gameobject的material而不至于全部更改  
     /// </summary>
