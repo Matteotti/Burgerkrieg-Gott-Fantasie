@@ -1,38 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Õâ¸öÀà¶¨ÒåÁËµØÍ¼¸ñ×ÓµÄ³ıÁËÌØĞ§Ê²Ã´Ê²Ã´µÄÖ®ÍâµÄËùÓĞÊôĞÔ
-[CreateAssetMenu(fileName = "NewMapGridBase", menuName = "Map/NewGridBase")]//½«ĞÂ½¨ÎïÌåµÄÑ¡ÏîÌí¼ÓÖÁunityÓÒ¼ü²Ëµ¥
+//è¿™ä¸ªç±»å®šä¹‰äº†åœ°å›¾æ ¼å­çš„é™¤äº†ç‰¹æ•ˆä»€ä¹ˆä»€ä¹ˆçš„ä¹‹å¤–çš„æ‰€æœ‰å±æ€§
+[CreateAssetMenu(fileName = "NewMapGridBase", menuName = "Map/NewGridBase")]//å°†æ–°å»ºç‰©ä½“çš„é€‰é¡¹æ·»åŠ è‡³unityå³é”®èœå•
 public class MapGridBase : ScriptableObject
 {
-    /*ÎÒ¶ÔtextureºÍmaterialÕâÒ»¿é²»Ì«ÊìÏ¤£¨ÀáÄ¿
-     * ËùÒÔÒÔÏÂµÄ²¿·ÖÔİÊ±Ã»Ğ´
-     * private elemental//ÔªËØ£¬Èç¹û´æÔÚÔªËØ£¬Õâ¸öµ¥Ôª¸ñ»á±»Ê©¼ÓÌØĞ§£¨Ö÷ÒªÊÇÒ»¸ö±äÉ«maskºÍÁ£×Ó£©
+    /*æˆ‘å¯¹textureå’Œmaterialè¿™ä¸€å—ä¸å¤ªç†Ÿæ‚‰ï¼ˆæ³ªç›®
+     * æ‰€ä»¥ä»¥ä¸‹çš„éƒ¨åˆ†æš‚æ—¶æ²¡å†™
+     * private elemental//å…ƒç´ ï¼Œå¦‚æœå­˜åœ¨å…ƒç´ ï¼Œè¿™ä¸ªå•å…ƒæ ¼ä¼šè¢«æ–½åŠ ç‰¹æ•ˆï¼ˆä¸»è¦æ˜¯ä¸€ä¸ªå˜è‰²maskå’Œç²’å­ï¼‰
      * {
      * element;
      * mask;
      * particales;
      * };
-     * private model//µ¥Ôª¸ñ¶ÔÓ¦µÄÄ£ĞÍ²ÄÖÊµÈ×ÊÔ´ÒıÓÃ£¬ÓÉ¸ß¶ÈºÍ¸½½üµÄµ¥Ôª¸ñ¹²Í¬¾ö¶¨£¨±ÈÈç¸ß¶ÈÏàÍ¬µÄÁ½×ùÉ½Á¬×ÅĞÎ³ÉÉ½Âö£©
+     * private model//å•å…ƒæ ¼å¯¹åº”çš„æ¨¡å‹æè´¨ç­‰èµ„æºå¼•ç”¨ï¼Œç”±é«˜åº¦å’Œé™„è¿‘çš„å•å…ƒæ ¼å…±åŒå†³å®šï¼ˆæ¯”å¦‚é«˜åº¦ç›¸åŒçš„ä¸¤åº§å±±è¿ç€å½¢æˆå±±è„‰ï¼‰
      * {
      * meshRef
      * materialRef
      * };
      */
-    [Tooltip("¸Ãµ¥Ôª¸ñ¸ß¶È")]
+    [Tooltip("è¯¥å•å…ƒæ ¼é«˜åº¦")]
     public int altitude;
-    [Tooltip("ÊÇ·ñ±»ÁÙÊ±¸ßÁÁ")]
+    [Tooltip("æ˜¯å¦è¢«ä¸´æ—¶é«˜äº®")]
     public bool hightLighted;
-    [Tooltip("ÔÚHexTilemapÀïµÄ×ø±ê")]
+    [Tooltip("åœ¨HexTilemapé‡Œçš„åæ ‡")]
     public Vector3Int hexPos;
-    [Tooltip("ÊÀ½ç×ø±ê")]
+    [Tooltip("ä¸–ç•Œåæ ‡")]
     public Vector3 worldPos;
-    [Tooltip("ÕıÃæ»òÕß·´Ãæ")]
+    [Tooltip("æ­£é¢æˆ–è€…åé¢")]
     public bool isOnTheFrontSide;
-    [Tooltip("ÓÉ¸ß¶È¾ö¶¨£¬Èç¹ûÒª×ö¶¯»­£¬Õâ¸ö±äÁ¿µÄÊôĞÔÓ¦±»¸ü¸ÄÎªanimator")]
+    [Tooltip("ç”±é«˜åº¦å†³å®šï¼Œå¦‚æœè¦åšåŠ¨ç”»ï¼Œè¿™ä¸ªå˜é‡çš„å±æ€§åº”è¢«æ›´æ”¹ä¸ºanimator")]
     public Sprite gridSprite;
-    [Tooltip("¸ñ×ÓËù´øµÄÔªËØ£¬¿ÉÒÔÎªNONE")]
+    [Tooltip("æ ¼å­æ‰€å¸¦çš„å…ƒç´ ï¼Œå¯ä»¥ä¸ºNONE")]
     public EnumDefinition.Element gridElement;
-    [Tooltip("¾ö¶¨Õâ¸ö¸ñÊÇ²»ÊÇÉñÃØ¸ñ×Ó»òÕßÒªÈû»òÕß±ğµÄÊ²Ã´ÌØÊâĞ§¹û£¬¿ÉÒÔÎªNONE")]
+    [Tooltip("å†³å®šè¿™ä¸ªæ ¼æ˜¯ä¸æ˜¯ç¥ç§˜æ ¼å­æˆ–è€…è¦å¡æˆ–è€…åˆ«çš„ä»€ä¹ˆç‰¹æ®Šæ•ˆæœï¼Œå¯ä»¥ä¸ºNONE")]
     public EnumDefinition.SpecialGridType specialGridType;
 }

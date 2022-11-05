@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Õâ¸öÀà´¢´æÁËËùÓĞÓëµØÍ¼¸ñ×ÓÏà¹ØµÄËØ²ÄÈçspriteÁ£×ÓÏµÍ³Ô¤ÖÆÌåÌØĞ§µÈ
-[CreateAssetMenu(fileName = "NewMapGridInventory", menuName = "Map/NewMapGridInventory")]//½«ĞÂ½¨ÎïÌåµÄÑ¡ÏîÌí¼ÓÖÁunityÓÒ¼ü²Ëµ¥
+//è¿™ä¸ªç±»å‚¨å­˜äº†æ‰€æœ‰ä¸åœ°å›¾æ ¼å­ç›¸å…³çš„ç´ æå¦‚spriteç²’å­ç³»ç»Ÿé¢„åˆ¶ä½“ç‰¹æ•ˆç­‰
+[CreateAssetMenu(fileName = "NewMapGridInventory", menuName = "Map/NewMapGridInventory")]//å°†æ–°å»ºç‰©ä½“çš„é€‰é¡¹æ·»åŠ è‡³unityå³é”®èœå•
 public class GridInventory : ScriptableObject
 {
-    [Tooltip("ÕâÀïÊÇ²»Í¬µØĞÎµÄspriteÎÄ¼ş£¬Ç°ÃæÊÇÃû×ÖºóÃæÊÇ¸ß¶È¾ø¶ÔÖµ,´øÓĞ¡°_¡±µÄ±íÊ¾¸ß¶ÈÊÇ¸ºÊı")]
+    [Tooltip("è¿™é‡Œæ˜¯ä¸åŒåœ°å½¢çš„spriteæ–‡ä»¶ï¼Œå‰é¢æ˜¯åå­—åé¢æ˜¯é«˜åº¦ç»å¯¹å€¼,å¸¦æœ‰â€œ_â€çš„è¡¨ç¤ºé«˜åº¦æ˜¯è´Ÿæ•°")]
     public Sprite mountain3, hill2, hill1, ground0, basin_1, valley_2, pit_3, hole;
 }

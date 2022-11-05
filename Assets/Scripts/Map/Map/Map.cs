@@ -4,39 +4,39 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    #region ³£Á¿
+    #region constants
 
-    [Tooltip("µØÍ¼¶şÎ¬Êı×éµÄ×î´ó±ß½ç")]
+    [Tooltip("åœ°å›¾äºŒç»´æ•°ç»„çš„æœ€å¤§è¾¹ç•Œ")]
     private const int maxRaw = 100, maxLine = 100;
 
     #endregion
 
-    #region ±äÁ¿
+    #region variables
 
-    [Tooltip("ÒÔGridµÄuv×ø±êÎªË÷ÒıµÄ¶şÎ¬Êı×é£¬´¢´æµØÍ¼µÄ¸ñ×Ó")]
+    [Tooltip("ä»¥Gridçš„uvåæ ‡ä¸ºç´¢å¼•çš„äºŒç»´æ•°ç»„ï¼Œå‚¨å­˜åœ°å›¾çš„æ ¼å­")]
     [SerializeField] public GameObject[,] MapGrids = new GameObject[maxRaw, maxLine];
 
-    [Tooltip("GridLayoutGrounpµÄ×î´óÁĞÊı")]
+    [Tooltip("GridLayoutGrounpçš„æœ€å¤§åˆ—æ•°")]
     public int gridLayoutGrounpMaxRaw;
 
-    [Tooltip("GridLayoutGrounpµÄĞĞ¼ä¾àÓëÁĞ¼ä¾à")]
+    [Tooltip("GridLayoutGrounpçš„è¡Œé—´è·ä¸åˆ—é—´è·")]
     public float gridLayoutGrounpRawGap, gridLayoutGrounpLineGap;
     #endregion
 
-    #region Debug±äÁ¿£¬releaseÊ±É¾³ı
+    #region Debug variables. Please delete them before releasing
 
-    public Vector2Int ÔÚÕâÀïÊäÈëÒª²é¿´µÄ×ø±ê;
-    public GameObject ¶şÎ¬Êı×é²é¿´Æ÷;
+    public Vector2Int coordToInspect;
+    public GameObject array2DInspector;
 
     #endregion
 
-    #region ¹©¸øMapManagerµ÷ÓÃµÄ·½·¨×é
+    #region methods for class MapManager
 
     /// <summary>
-    /// Õâ¸öº¯Êı½«ÊÀ½ç×ø±ê×ª»¯ÎªhexTilemapµÄcell×ø±ê£¨×¢ÒâÀàĞÍÊÇVECTOR3INT£©²¢·µ»Ø£¨ÒªÈ·±£ÄãµÄÊäÈëÕæµÄÊÇÒ»¸ö¸ñ×ÓµÄ×ø±ê£¬¶ø²»ÊÇËæ±ãÅªµÄÒ»¸öÈıÎ¬ÏòÁ¿£©
+    /// è¿™ä¸ªå‡½æ•°å°†ä¸–ç•Œåæ ‡è½¬åŒ–ä¸ºhexTilemapçš„cellåæ ‡ï¼ˆæ³¨æ„ç±»å‹æ˜¯VECTOR3INTï¼‰å¹¶è¿”å›ï¼ˆè¦ç¡®ä¿ä½ çš„è¾“å…¥çœŸçš„æ˜¯ä¸€ä¸ªæ ¼å­çš„åæ ‡ï¼Œè€Œä¸æ˜¯éšä¾¿å¼„çš„ä¸€ä¸ªä¸‰ç»´å‘é‡ï¼‰
     /// </summary>
-    /// <param name="WorldPos">ÊÀ½ç×ø±ê</param>
-    /// <returns>×ª»¯ºóµÄcell×ø±ê</returns>
+    /// <param name="WorldPos">ä¸–ç•Œåæ ‡</param>
+    /// <returns>è½¬åŒ–åçš„cellåæ ‡</returns>
     public Vector3Int WorldPosToHexPos(Vector3 WorldPos)
     {
         float deltaX = WorldPos.x - transform.position.x, deltaY = WorldPos.y - transform.position.y;
@@ -48,10 +48,10 @@ public class Map : MonoBehaviour
     }
 
     /// <summary>
-    /// Õâ¸öº¯Êı½«hexTilemapµÄcell×ø±ê£¨×¢ÒâÀàĞÍÊÇVECTOR3INT£©×ª»¯ÎªÊÀ½ç×ø±ê²¢·µ»Ø
+    /// è¿™ä¸ªå‡½æ•°å°†hexTilemapçš„cellåæ ‡ï¼ˆæ³¨æ„ç±»å‹æ˜¯VECTOR3INTï¼‰è½¬åŒ–ä¸ºä¸–ç•Œåæ ‡å¹¶è¿”å›
     /// </summary>
-    /// <param name="HexPos">cell×ø±ê</param>
-    /// <returns>×ª»¯ºóµÄÊÀ½ç×ø±ê</returns>
+    /// <param name="HexPos">cellåæ ‡</param>
+    /// <returns>è½¬åŒ–åçš„ä¸–ç•Œåæ ‡</returns>
     public Vector3 HexPosToWorldPos(Vector3Int HexPos)
     {
         int cellX = HexPos.x, cellY = HexPos.y;
@@ -63,10 +63,10 @@ public class Map : MonoBehaviour
     }
 
     /// <summary>
-    /// ¸Ãº¯Êı½«Ä¿±êµÄµØÍ¼¸ñ×ÓµÄ¸ßÁÁÄ£Ê½¸Ä±ä£¨ÈôÎŞĞè¸ßÁÁ£¬´«ÈëEnumDefinition.HighlightMode.None£©
+    /// è¯¥å‡½æ•°å°†ç›®æ ‡çš„åœ°å›¾æ ¼å­çš„é«˜äº®æ¨¡å¼æ”¹å˜ï¼ˆè‹¥æ— éœ€é«˜äº®ï¼Œä¼ å…¥EnumDefinition.HighlightMode.Noneï¼‰
     /// </summary>
-    /// <param name="target">Ò»¸ö°üº¬ÁËËùÓĞµÄ´ı¸ü¸Ä¸ñ×ÓµÄList<MapGrid>±äÁ¿</param>
-    /// <param name="highlightMode">¸ßÁÁÄ£Ê½£¬¿ÉÒÔÎªNone</param>
+    /// <param name="target">ä¸€ä¸ªåŒ…å«äº†æ‰€æœ‰çš„å¾…æ›´æ”¹æ ¼å­çš„List<MapGrid>å˜é‡</param>
+    /// <param name="highlightMode">é«˜äº®æ¨¡å¼ï¼Œå¯ä»¥ä¸ºNone</param>
     public void HighlightMapGrids(List<MapGrid> target, EnumDefinition.HighlightMode highlightMode)
     {
         foreach(MapGrid grid in target)
@@ -76,10 +76,10 @@ public class Map : MonoBehaviour
     }
 
     /// <summary>
-    /// ¸Ãº¯Êı¸Ä±äÒ»Åú¸ñ×ÓµÄ¸ß¶È
+    /// è¯¥å‡½æ•°æ”¹å˜ä¸€æ‰¹æ ¼å­çš„é«˜åº¦
     /// </summary>
-    /// <param name="target">Ä¿±ê¸ñ×ÓµÄlist</param>
-    /// <param name="delta">±ä»¯Á¿</param>
+    /// <param name="target">ç›®æ ‡æ ¼å­çš„list</param>
+    /// <param name="delta">å˜åŒ–é‡</param>
     public void ChangeMapGridsAltitude(List<MapGrid> target, int delta)
     {
         foreach (MapGrid grid in target)
@@ -89,10 +89,10 @@ public class Map : MonoBehaviour
     }
 
     /// <summary>
-    /// ÔÚÒ»Åú¸ñ×ÓÉÏ²úÉúÔªËØ·´Ó¦
+    /// åœ¨ä¸€æ‰¹æ ¼å­ä¸Šäº§ç”Ÿå…ƒç´ ååº”
     /// </summary>
-    /// <param name="target">Ä¿±ê¸ñ×Ólist</param>
-    /// <param name="elementIn">´«ÈëµÄÔªËØ</param>
+    /// <param name="target">ç›®æ ‡æ ¼å­list</param>
+    /// <param name="elementIn">ä¼ å…¥çš„å…ƒç´ </param>
     public void ElementalReaction(List<MapGrid> target, EnumDefinition.Element elementIn)
     {
         foreach (MapGrid grid in target)
@@ -102,41 +102,41 @@ public class Map : MonoBehaviour
     }
 
     /// <summary>
-    /// µ±Æå×ÓÕ¾ÔÚ¸ñ×ÓÉÏÊ±£¬Ã¿»ØºÏµ÷ÓÃÒ»´Î
+    /// å½“æ£‹å­ç«™åœ¨æ ¼å­ä¸Šæ—¶ï¼Œæ¯å›åˆè°ƒç”¨ä¸€æ¬¡
     /// </summary>
-    /// <param name="gridHexPos">¸ñ×ÓµÄcell×ø±ê</param>
-    /// <param name="chess">Æå×Ó</param>
+    /// <param name="gridHexPos">æ ¼å­çš„cellåæ ‡</param>
+    /// <param name="chess">æ£‹å­</param>
     public void OnStand(Vector3Int gridHexPos, GameObject chess)
     {
         MapGrids[gridHexPos.x, gridHexPos.y].GetComponent<MapGrid>().OnChessStand(chess);
     }
 
     /// <summary>
-    /// µ±Æå×ÓÓë¸ñ×Ó½»»¥Ê±µ÷ÓÃ
+    /// å½“æ£‹å­ä¸æ ¼å­äº¤äº’æ—¶è°ƒç”¨
     /// </summary>
-    /// <param name="gridHexPos">¸ñ×ÓµÄcell×ø±ê</param>
-    /// <param name="chess">Æå×Ó</param>
+    /// <param name="gridHexPos">æ ¼å­çš„cellåæ ‡</param>
+    /// <param name="chess">æ£‹å­</param>
     public void OnInterface(Vector3Int gridHexPos, GameObject chess)
     {
         MapGrids[gridHexPos.x, gridHexPos.y].GetComponent<MapGrid>().OnChessInterface(chess);
     }
 
     /// <summary>
-    /// µã»÷Ä³¸öµØÍ¼¸ñ×ÓÊ±µ÷ÓÃ
+    /// ç‚¹å‡»æŸä¸ªåœ°å›¾æ ¼å­æ—¶è°ƒç”¨
     /// </summary>
-    /// <param name="hexPos">µØÍ¼¸ñ×ÓµÄcell×ø±ê</param>
+    /// <param name="hexPos">åœ°å›¾æ ¼å­çš„cellåæ ‡</param>
     public void Click(Vector3Int hexPos)
     {
         MapGrids[hexPos.x, hexPos.y].GetComponent<MapGrid>().MapGridOnClick();
     }
 
     /// <summary>
-    /// ¸Ãº¯ÊıÔÚÖ¸¶¨Î»ÖÃÉÏÉú³ÉÒ»¸öµØÍ¼¸ñ×Ó
+    /// è¯¥å‡½æ•°åœ¨æŒ‡å®šä½ç½®ä¸Šç”Ÿæˆä¸€ä¸ªåœ°å›¾æ ¼å­
     /// </summary>
-    /// <param name="targetPos">Ä¿±êÎ»ÖÃ</param>
-    /// <param name="gridPrefab">ÓÃÓÚÉú³ÉµÄgameobjectÔ¤ÖÆÌå</param>
-    /// <param name="targetBase">´¢´æÄ¿±ê¸ñ×ÓµÄËùÓĞÊôĞÔµÄMapGrid»ùÀà</param>
-    /// <param name="isOnTheFrontSide">ÊÇ·ñÎ»ÓÚÕıÃæµØÍ¼</param>
+    /// <param name="targetPos">ç›®æ ‡ä½ç½®</param>
+    /// <param name="gridPrefab">ç”¨äºç”Ÿæˆçš„gameobjecté¢„åˆ¶ä½“</param>
+    /// <param name="targetBase">å‚¨å­˜ç›®æ ‡æ ¼å­çš„æ‰€æœ‰å±æ€§çš„MapGridåŸºç±»</param>
+    /// <param name="isOnTheFrontSide">æ˜¯å¦ä½äºæ­£é¢åœ°å›¾</param>
     public void InstantiateGrid(Vector3Int targetPos, MapGridBase targetBase)
     {
         GameObject temp = MapGrids[targetPos.x, targetPos.y];
@@ -146,10 +146,10 @@ public class Map : MonoBehaviour
     }
 
     /// <summary>
-    /// ¸Ãº¯ÊıÏú»ÙÖ¸¶¨Î»ÖÃÉÏµÄ¸ñ×Ó
+    /// è¯¥å‡½æ•°é”€æ¯æŒ‡å®šä½ç½®ä¸Šçš„æ ¼å­
     /// </summary>
-    /// <param name="targetPos">Ä¿±êÎ»ÖÃ</param>
-    /// <param name="isOnTheFrontSide">ÊÇ·ñÎ»ÓÚÕıÃæµØÍ¼</param>
+    /// <param name="targetPos">ç›®æ ‡ä½ç½®</param>
+    /// <param name="isOnTheFrontSide">æ˜¯å¦ä½äºæ­£é¢åœ°å›¾</param>
     public void DestroyGrid(Vector3Int targetPos)
     {
         GameObject temp = MapGrids[targetPos.x, targetPos.y];
@@ -158,13 +158,13 @@ public class Map : MonoBehaviour
 
     #endregion
 
-    #region ×ÔÉíĞèÒªµ÷ÓÃµÄ·½·¨×é
+    #region methods for Self
     /// <summary>
-    /// ¸Ãº¯Êı½«ÒÔ×ÔÉí×ø±êÎªÆğµã£¬ÒÔÀàËÆÓÚUnityGridLayoutGrounpµÄ·½Ê½¶ÔÆä×ÓÎïÌå½øĞĞÖØÅÅÁĞ³ÉÁù±ßĞÎÍø¸ñ×´£¬²¢ÇÒ½«ÏàÓ¦¸ñ×Ó´æÈëMapGrids¶şÎ¬Êı×é
+    /// è¯¥å‡½æ•°å°†ä»¥è‡ªèº«åæ ‡ä¸ºèµ·ç‚¹ï¼Œä»¥ç±»ä¼¼äºUnityGridLayoutGrounpçš„æ–¹å¼å¯¹å…¶å­ç‰©ä½“è¿›è¡Œé‡æ’åˆ—æˆå…­è¾¹å½¢ç½‘æ ¼çŠ¶ï¼Œå¹¶ä¸”å°†ç›¸åº”æ ¼å­å­˜å…¥MapGridsäºŒç»´æ•°ç»„
     /// </summary>
-    /// <param name="maxRaw">×î´óÁĞÊı£¬Òà¼´µ½Õâ¸öÁĞÊıÁË¾Í»»ĞĞ</param>
-    /// <param name="rawGap">ĞĞ¼ä¾à</param>
-    /// <param name="lineGap">ÁĞ¼ä¾à</param>
+    /// <param name="maxRaw">æœ€å¤§åˆ—æ•°ï¼Œäº¦å³åˆ°è¿™ä¸ªåˆ—æ•°äº†å°±æ¢è¡Œ</param>
+    /// <param name="rawGap">è¡Œé—´è·</param>
+    /// <param name="lineGap">åˆ—é—´è·</param>
     void GridPermutation(int maxRaw, float rawGap, float lineGap)
     {
         int rawIndex = 0, lineIndex = 0;
@@ -179,11 +179,11 @@ public class Map : MonoBehaviour
 
     #endregion
 
-    #region Debug·½·¨×é£¬releaseÊ±É¾³ı
+    #region Debug methods, Please delete them before releasing
 
     void Debug()
     {
-        ¶şÎ¬Êı×é²é¿´Æ÷ = MapGrids[ÔÚÕâÀïÊäÈëÒª²é¿´µÄ×ø±ê.x, ÔÚÕâÀïÊäÈëÒª²é¿´µÄ×ø±ê.y];
+        array2DInspector = MapGrids[coordToInspect.x, coordToInspect.y];
     }
 
     #endregion

@@ -5,9 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class MapManager : MonoBehaviour
 {
-    [Tooltip("正面地图的HexTilemap")]
+    [Tooltip("HexTilemap for frontMap")]
     public Map front;
-    [Tooltip("反面地图的HexTilemap")]
+    [Tooltip("HexTilemap for backMap")]
     public Map back;
     
 }

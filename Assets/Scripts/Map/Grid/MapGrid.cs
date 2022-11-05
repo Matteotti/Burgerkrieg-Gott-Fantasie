@@ -5,27 +5,27 @@ using UnityEngine;
 public class MapGrid : MonoBehaviour
 {
 
-    #region ±äÁ¿
-    [Tooltip("ÕâÊÇ¸Ã½Å±¾ÒıÓÃµÄ³Ö¾Ã»¯×ÊÔ´£¬²»¿É±»¸ü¸Ä£¬ÔÚÕâÀï·ÅÈëGridBase")]
+    #region variables
+    [Tooltip("è¿™æ˜¯è¯¥è„šæœ¬å¼•ç”¨çš„æŒä¹…åŒ–èµ„æºï¼Œä¸å¯è¢«æ›´æ”¹ï¼Œåœ¨è¿™é‡Œæ”¾å…¥GridBase")]
     public MapGridBase baseGrid;
-    [Tooltip("ÕâÊÇ¸Ã½Å±¾×Ô¼ºµÄMapUnitÊôĞÔ£¬Ó¦¸Ã¸ü¸ÄµÄÊÇÕâ¸ö")]
+    [Tooltip("è¿™æ˜¯è¯¥è„šæœ¬è‡ªå·±çš„MapUnitå±æ€§ï¼Œåº”è¯¥æ›´æ”¹çš„æ˜¯è¿™ä¸ª")]
     public MapGridBase thisGrid;
-    [Tooltip("¸ñ×ÓµÄËùÓĞspriteËØ²Ä£¬ÌØĞ§£¬Á£×ÓÏµÍ³Ô¤ÖÆÌåµÈ¶¼ÔÚÕâ¸öÀàÀï")]
+    [Tooltip("æ ¼å­çš„æ‰€æœ‰spriteç´ æï¼Œç‰¹æ•ˆï¼Œç²’å­ç³»ç»Ÿé¢„åˆ¶ä½“ç­‰éƒ½åœ¨è¿™ä¸ªç±»é‡Œ")]
     public GridInventory inventory;
-    [Tooltip("ÕâÊÇ¸ÃÎïÌåµÄOutline Shader£¬ÒÔÓÃÓÚ¸ßÁÁ£¬×¢ÒâĞèÒªÊµÀı»¯Ò»¸öÖ®ºóÔÙ¸ü¸Ä£¬²»È»µÄ»°ËùÓĞµÄshader¶¼»á±»¸Ä£¨ÒÑ·â×°£¬²»ÓÃ¹Ü£©")]
+    [Tooltip("è¿™æ˜¯è¯¥ç‰©ä½“çš„Outline Shaderï¼Œä»¥ç”¨äºé«˜äº®ï¼Œæ³¨æ„éœ€è¦å®ä¾‹åŒ–ä¸€ä¸ªä¹‹åå†æ›´æ”¹ï¼Œä¸ç„¶çš„è¯æ‰€æœ‰çš„shaderéƒ½ä¼šè¢«æ”¹ï¼ˆå·²å°è£…ï¼Œä¸ç”¨ç®¡ï¼‰")]
     public Material thisOutlineMaterial;
     #endregion
 
-    #region MapÀàĞèÒªµ÷ÓÃµÄ·½·¨
+    #region methods for class Map
     /// <summary>
-    /// ¸ù¾İÈ«¾Ö±äÁ¿thisGridÀ´¸üĞÂµ±Ç°µØÍ¼µ¥Ôª
+    /// æ ¹æ®å…¨å±€å˜é‡thisGridæ¥æ›´æ–°å½“å‰åœ°å›¾å•å…ƒ
     /// </summary>
     public void UpdateGrid()
     {
-        /*Èç¹û´æÔÚÔªËØ£¬Õâ¸öµ¥Ôª¸ñ»á±»Ê©¼ÓÌØĞ§
-         *µ¥Ôª¸ñ¶ÔÓ¦µÄÄ£ĞÍ²ÄÖÊµÈ×ÊÔ´ÒıÓÃ£¬ÓÉ¸ß¶ÈºÍ¸½½üµÄµ¥Ôª¸ñ¹²Í¬¾ö¶¨£¨±ÈÈç¸ß¶ÈÏàÍ¬µÄÁ½×ùÉ½Á¬×ÅĞÎ³ÉÉ½Âö£©
-         *ÕâĞ©Ò²ĞèÒª¸üĞÂ£¬ÎÒ»¹Ã»Ğ´
-         *µ«ÊÇÕâÀï²»°üº¬¸ßÁÁ×´Ì¬µÄ¸üĞÂ
+        /*å¦‚æœå­˜åœ¨å…ƒç´ ï¼Œè¿™ä¸ªå•å…ƒæ ¼ä¼šè¢«æ–½åŠ ç‰¹æ•ˆ
+         *å•å…ƒæ ¼å¯¹åº”çš„æ¨¡å‹æè´¨ç­‰èµ„æºå¼•ç”¨ï¼Œç”±é«˜åº¦å’Œé™„è¿‘çš„å•å…ƒæ ¼å…±åŒå†³å®šï¼ˆæ¯”å¦‚é«˜åº¦ç›¸åŒçš„ä¸¤åº§å±±è¿ç€å½¢æˆå±±è„‰ï¼‰
+         *è¿™äº›ä¹Ÿéœ€è¦æ›´æ–°ï¼Œæˆ‘è¿˜æ²¡å†™
+         *ä½†æ˜¯è¿™é‡Œä¸åŒ…å«é«˜äº®çŠ¶æ€çš„æ›´æ–°
          */
         switch (thisGrid.altitude)
         {
@@ -53,13 +53,13 @@ public class MapGrid : MonoBehaviour
             default:
                 thisGrid.gridSprite = inventory.hole;
                 break;
-        }//²»Í¬µÄ¸ß¶È¶ÔÓ¦²»Í¬µÄÌùÍ¼£¬Ö®ºó¸üĞÂÌùÍ¼
+        }//ä¸åŒçš„é«˜åº¦å¯¹åº”ä¸åŒçš„è´´å›¾ï¼Œä¹‹åæ›´æ–°è´´å›¾
         GetComponent<SpriteRenderer>().sprite = thisGrid.gridSprite;
     }
     /// <summary>
-    /// ½«ÕâÒ»¿éµØÍ¼¸ñ×Ó¸ßÁÁ
+    /// å°†è¿™ä¸€å—åœ°å›¾æ ¼å­é«˜äº®
     /// </summary>
-    /// <param name="highLightMode">¸ßÁÁÄ£Ê½£¬¿ÉÒÔÎªNONE</param>
+    /// <param name="highLightMode">é«˜äº®æ¨¡å¼ï¼Œå¯ä»¥ä¸ºNONE</param>
     public void HighlightGrid(EnumDefinition.HighlightMode highLightMode)
     {
         switch (highLightMode)
@@ -90,31 +90,31 @@ public class MapGrid : MonoBehaviour
         }
     }
     /// <summary>
-    /// µØÍ¼ÉÏµÄÔªËØ·´Ó¦£¬ÊäÈëÄ³ÔªËØ£¬¸Ä±äElement£¬²úÉú·´Ó¦£¬²¢´ïµ½Ä³Ğ§¹û
+    /// åœ°å›¾ä¸Šçš„å…ƒç´ ååº”ï¼Œè¾“å…¥æŸå…ƒç´ ï¼Œæ”¹å˜Elementï¼Œäº§ç”Ÿååº”ï¼Œå¹¶è¾¾åˆ°æŸæ•ˆæœ
     /// </summary>
-    /// <param name="elementIn">´«ÈëµÄÔªËØ</param>
+    /// <param name="elementIn">ä¼ å…¥çš„å…ƒç´ </param>
     public void ElementReactionOnMap(EnumDefinition.Element elementIn)
     {
 
     }
     /// <summary>
-    /// Ğ¡±øÕ¾ÔÚ¸Ã¸ñ×ÓÉÏÊ±£¬Ã¿»ØºÏÖ´ĞĞÒ»´Î
+    /// å°å…µç«™åœ¨è¯¥æ ¼å­ä¸Šæ—¶ï¼Œæ¯å›åˆæ‰§è¡Œä¸€æ¬¡
     /// </summary>
-    /// <param name="chess">Õ¾ÔÚÉÏÃæµÄÆå×Ó</param>
+    /// <param name="chess">ç«™åœ¨ä¸Šé¢çš„æ£‹å­</param>
     public void OnChessStand(GameObject chess)
     {
 
     }
     /// <summary>
-    /// Ğ¡±øÓë¸Ã¸ñ×Ó½»»¥Ê±Ö´ĞĞÒ»´Î
+    /// å°å…µä¸è¯¥æ ¼å­äº¤äº’æ—¶æ‰§è¡Œä¸€æ¬¡
     /// </summary>
-    /// <param name="chess">ÓëÖ®½»»¥µÄÆå×Ó</param>
+    /// <param name="chess">ä¸ä¹‹äº¤äº’çš„æ£‹å­</param>
     public void OnChessInterface(GameObject chess)
     {
 
     }
     /// <summary>
-    /// Êó±êµã»÷¸Ã¸ñ×ÓÊ±Ö´ĞĞ£¬Ò²ĞíÊÇÏÔÊ¾ĞÅÏ¢£¿
+    /// é¼ æ ‡ç‚¹å‡»è¯¥æ ¼å­æ—¶æ‰§è¡Œï¼Œä¹Ÿè®¸æ˜¯æ˜¾ç¤ºä¿¡æ¯ï¼Ÿ
     /// </summary>
     public void MapGridOnClick()
     {
@@ -122,9 +122,9 @@ public class MapGrid : MonoBehaviour
     }
     #endregion
 
-    #region ×Ô¼ºĞèÒªµ÷ÓÃµÄ·½·¨
+    #region methods for Self
     /// <summary>
-    /// Õâ¸ö·½·¨ÓÃÀ´Éú³ÉÒ»¸öµ¥¶ÀµÄmaterial£¬ÓÃÀ´µ¥¶À¸ü¸ÄÄ³Ò»¸ögameobjectµÄmaterial¶ø²»ÖÁÓÚÈ«²¿¸ü¸Ä  
+    /// è¿™ä¸ªæ–¹æ³•ç”¨æ¥ç”Ÿæˆä¸€ä¸ªå•ç‹¬çš„materialï¼Œç”¨æ¥å•ç‹¬æ›´æ”¹æŸä¸€ä¸ªgameobjectçš„materialè€Œä¸è‡³äºå…¨éƒ¨æ›´æ”¹  
     /// </summary>
     void MaterialInitialize()
     {
@@ -137,6 +137,6 @@ public class MapGrid : MonoBehaviour
     {
         thisGrid = Instantiate(baseGrid);
         MaterialInitialize();
-        UpdateGrid();//½Å±¾ÊµÀı»¯Ê±½øĞĞÒ»´Î¸üĞÂ
+        UpdateGrid();//è„šæœ¬å®ä¾‹åŒ–æ—¶è¿›è¡Œä¸€æ¬¡æ›´æ–°
     }
 }
