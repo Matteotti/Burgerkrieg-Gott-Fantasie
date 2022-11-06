@@ -2,69 +2,77 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapGrid : MonoBehaviour
+public class HexCell : MonoBehaviour
 {
 
     #region variables
-    [Tooltip("这是该脚本引用的持久化资源，不可被更改，在这里放入GridBase")]
-    public MapGridBase baseGrid;
+    [Tooltip("The axial coordinates of this hexCell")]
+    public HexCoord hexCoord;
 
-    [Tooltip("这是该脚本自己的MapUnit属性，应该更改的是这个")]
-    public MapGridBase thisGrid;
-
+    [Tooltip("该单元格高度")]
+    public int altitude;
+    [Tooltip("是否被临时高亮")]
+    public bool highLighted;
+    [Tooltip("正面或者反面")]//dont use this temporarily
+    public bool isOnTheFrontSide;
+    [Tooltip("由高度决定，如果要做动画，这个变量的属性应被更改为animator")]//it seems we will not use sprite
+    public Sprite cellSprite;
+    [Tooltip("格子所带的元素，可以为NONE")]
+    public EnumDefinition.Element cellElement;
+    [Tooltip("决定这个格是不是神秘格子或者要塞或者别的什么特殊效果，可以为NONE")]
+    public EnumDefinition.SpecialGridType specialCellType;
     [Tooltip("格子的所有sprite素材，特效，粒子系统预制体等都在这个类里")]
     public GridInventory inventory;
-
     [Tooltip("这是该物体的Outline Shader，以用于高亮，注意需要实例化一个之后再更改，不然的话所有的shader都会被改（已封装，不用管）")]
     public Material thisOutlineMaterial;
-    
+
     #endregion
 
     #region methods for Map to use
     /// <summary>
     /// 根据全局变量thisGrid来更新当前地图单元
     /// </summary>
-    public void UpdateGrid()
+    public void UpdateCell()
     {
         /*如果存在元素，这个单元格会被施加特效
          *单元格对应的模型材质等资源引用，由高度和附近的单元格共同决定（比如高度相同的两座山连着形成山脉）
          *这些也需要更新，我还没写
          *但是这里不包含高亮状态的更新
          */
-        switch (thisGrid.altitude)
+        switch (altitude)
         {
             case -3:
-                thisGrid.gridSprite = inventory.mountain3;
+                cellSprite = inventory.mountain3;
                 break;
             case -2:
-                thisGrid.gridSprite = inventory.hill2;
+                cellSprite = inventory.hill2;
                 break;
             case -1:
-                thisGrid.gridSprite = inventory.hill1;
+                cellSprite = inventory.hill1;
                 break;
             case 0:
-                thisGrid.gridSprite = inventory.ground0;
+                cellSprite = inventory.ground0;
                 break;
             case 1:
-                thisGrid.gridSprite = inventory.basin_1;
+                cellSprite = inventory.basin_1;
                 break;
             case 2:
-                thisGrid.gridSprite = inventory.valley_2;
+                cellSprite = inventory.valley_2;
                 break;
             case 3:
-                thisGrid.gridSprite = inventory.pit_3;
+                cellSprite = inventory.pit_3;
                 break;
             default:
-                thisGrid.gridSprite = inventory.hole;
+                cellSprite = inventory.hole;
                 break;
         }//不同的高度对应不同的贴图，之后更新贴图
-        GetComponent<SpriteRenderer>().sprite = thisGrid.gridSprite;
+        GetComponent<SpriteRenderer>().sprite = cellSprite;
     }
     /// <summary>
     /// 将这一块地图格子高亮
     /// </summary>
     /// <param name="highLightMode">高亮模式，可以为NONE</param>
-    public void HighlightGrid(EnumDefinition.HighlightMode highLightMode)
+    public void HighlightCell(EnumDefinition.HighlightMode highLightMode)
     {
         switch (highLightMode)
         {
@@ -139,8 +147,7 @@ public class MapGrid : MonoBehaviour
 
     private void Start()
     {
-        thisGrid = Instantiate(baseGrid);
         MaterialInitialize();
-        UpdateGrid();//脚本实例化时进行一次更新
+        UpdateCell();//脚本实例化时进行一次更新
     }
 }
