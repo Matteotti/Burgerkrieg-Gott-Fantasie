@@ -94,9 +94,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9020989129323676223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e5d33d59a95c94eb0f306067735eea, type: 3}
+  m_Script: {fileID: 11500000, guid: c26bab547d6e35b47a7ba64a642b9e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 43f9a6e9368af3f4b8ec84c88bd57f7d, type: 2}
+  cell: {fileID: 7988074305754039144}
 --- !u!114 &7988074305754039144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,9 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e50160e9ff781842b8b7d7c9c9ec0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hexCoord: {fileID: 8860847373279181644}
+  hexCoord: {x: 0, y: 0}
   altitude: 0
-  hightLighted: 0
+  highLighted: 0
   isOnTheFrontSide: 0
   cellSprite: {fileID: 0}
   cellElement: 5
