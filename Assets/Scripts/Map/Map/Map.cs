@@ -159,23 +159,23 @@ public class Map : MonoBehaviour
     #endregion
 
     #region methods for Self to use
-    /// <summary>
-    /// 该函数将以自身坐标为起点，以类似于UnityGridLayoutGrounp的方式对其子物体进行重排列成六边形网格状，并且将相应格子存入MapGrids二维数组
-    /// </summary>
-    /// <param name="maxRaw">最大列数，亦即到这个列数了就换行</param>
-    /// <param name="rawGap">行间距</param>
-    /// <param name="lineGap">列间距</param>
-    void GridPermutation(int maxRaw, float rawGap, float lineGap)
-    {
-        int rawIndex = 0, lineIndex = 0;
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            lineIndex = i / maxRaw;
-            rawIndex = i % maxRaw;
-            transform.GetChild(i).transform.position = transform.position + new Vector3(rawIndex * rawGap, lineIndex * lineGap, 0) + ((lineIndex % 2 == 1) ? new Vector3(rawGap / 2, 0, 0) : Vector3.zero);
-            MapGrids[rawIndex, lineIndex] = transform.GetChild(i).gameObject;
-        }
-    }
+    ///// <summary>
+    ///// 该函数将以自身坐标为起点，以类似于UnityGridLayoutGrounp的方式对其子物体进行重排列成六边形网格状，并且将相应格子存入MapGrids二维数组
+    ///// </summary>
+    ///// <param name="maxRaw">最大列数，亦即到这个列数了就换行</param>
+    ///// <param name="rawGap">行间距</param>
+    ///// <param name="lineGap">列间距</param>
+    //void GridPermutation(int maxRaw, float rawGap, float lineGap)
+    //{
+    //    int rawIndex = 0, lineIndex = 0;
+    //    for (int i = 0; i < transform.childCount; i++)
+    //    {
+    //        lineIndex = i / maxRaw;
+    //        rawIndex = i % maxRaw;
+    //        transform.GetChild(i).transform.position = transform.position + new Vector3(rawIndex * rawGap, lineIndex * lineGap, 0) + ((lineIndex % 2 == 1) ? new Vector3(rawGap / 2, 0, 0) : Vector3.zero);
+    //        MapGrids[rawIndex, lineIndex] = transform.GetChild(i).gameObject;
+    //    }
+    //}
 
     #endregion
 
@@ -189,7 +189,7 @@ public class Map : MonoBehaviour
     #endregion
     private void Start()
     {
-        GridPermutation(gridLayoutGrounpMaxRaw, gridLayoutGrounpRawGap, gridLayoutGrounpLineGap);
+        //GridPermutation(gridLayoutGrounpMaxRaw, gridLayoutGrounpRawGap, gridLayoutGrounpLineGap);
     }
     private void Update()
     {

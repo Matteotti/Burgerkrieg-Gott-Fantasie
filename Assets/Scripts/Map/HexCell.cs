@@ -6,9 +6,8 @@ public class HexCell : MonoBehaviour
 {
 
     #region variables
-    [Tooltip("The axial coordinates of this hexCell")]
-    public HexCoord hexCoord;
-
+    [Tooltip("该格子的六边形坐标")]
+    public Vector2Int hexCoord;
     [Tooltip("该单元格高度")]
     public int altitude;
     [Tooltip("是否被临时高亮")]
