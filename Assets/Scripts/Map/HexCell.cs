@@ -1,3 +1,4 @@
+using cakeslice;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -38,33 +39,20 @@ public class HexCell : MonoBehaviour
          *这些也需要更新，我还没写
          *但是这里不包含高亮状态的更新
          */
-        switch (altitude)
+        //更新cellMesh
+        cellMesh = altitude switch
         {
-            case -3:
-                cellMesh = inventory.mountain3;
-                break;
-            case -2:
-                cellMesh = inventory.hill2;
-                break;
-            case -1:
-                cellMesh = inventory.hill1;
-                break;
-            case 0:
-                cellMesh = inventory.ground0;
-                break;
-            case 1:
-                cellMesh = inventory.basin_1;
-                break;
-            case 2:
-                cellMesh = inventory.valley_2;
-                break;
-            case 3:
-                cellMesh = inventory.pit_3;
-                break;
-            default:
-                cellMesh = inventory.hole;
-                break;
-        }
+            3 => inventory.mountain3,
+            2 => inventory.hill2,
+            1 => inventory.hill1,
+            0 => inventory.ground0,
+            -1 => inventory.basin_1,
+            -2 => inventory.valley_2,
+            -3 => inventory.pit_3,
+            _ => inventory.hole,
+        };
+        //更新meshCollider
+        GetComponent<MeshCollider>().sharedMesh = cellMesh;
         //add special effect
         //add partical system
     }
@@ -74,6 +62,7 @@ public class HexCell : MonoBehaviour
     /// <param name="highLightMode">高亮模式，可以为NONE</param>
     public void HighlightCell(Inventory.HighlightMode highLightMode)
     {
+        Outline outline = GetComponent<Outline>();
         switch (highLightMode)
         {
             case Inventory.HighlightMode.mouseTarget:
@@ -85,8 +74,11 @@ public class HexCell : MonoBehaviour
             case Inventory.HighlightMode.moveRange:
                 break;
             case Inventory.HighlightMode.moveTarget:
+                outline.enabled = true;
+                outline.color = 0;
                 break;
             case Inventory.HighlightMode.None:
+                outline.enabled = false;
                 break;
         }
     }
@@ -137,5 +129,9 @@ public class HexCell : MonoBehaviour
     {
         Initialize();
         UpdateCell();//脚本实例化时进行一次更新
+    }
+    private void Update()
+    {
+        UpdateCell();
     }
 }

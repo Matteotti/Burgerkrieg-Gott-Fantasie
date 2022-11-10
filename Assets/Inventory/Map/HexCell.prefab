@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 7988074305754039144}
   - component: {fileID: 6389644910631916973}
   - component: {fileID: 3899115022994288541}
+  - component: {fileID: 139176820}
+  - component: {fileID: 2546962869087576164}
   m_Layer: 0
   m_Name: HexCell
-  m_TagString: Untagged
+  m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,10 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 43f9a6e9368af3f4b8ec84c88bd57f7d, type: 2}
-  gridInventory: {fileID: 0}
+  gridInventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
   map: {fileID: 0}
   cell: {fileID: 7988074305754039144}
-  cellMesh: {fileID: 0}
+  cellMeshFilter: {fileID: 3899115022994288541}
 --- !u!114 &7988074305754039144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hexCoord: {x: 0, y: 0}
-  altitude: 0
+  altitude: 1
   highLighted: 0
   isOnTheFrontSide: 0
   cellMesh: {fileID: 0}
@@ -122,4 +124,32 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9020989129323676223}
-  m_Mesh: {fileID: 2009735708707154172, guid: ea01fa525474649449cf7a60ddbcfa7e, type: 3}
+  m_Mesh: {fileID: -6667049320550289732, guid: 24bbdf2c32dca2a43ba931e930e987e2, type: 3}
+--- !u!114 &139176820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9020989129323676223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!64 &2546962869087576164
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9020989129323676223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6667049320550289732, guid: 24bbdf2c32dca2a43ba931e930e987e2, type: 3}
