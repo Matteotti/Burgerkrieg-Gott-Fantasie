@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-
 public class HexCell : MonoBehaviour
 {
 
@@ -15,11 +15,11 @@ public class HexCell : MonoBehaviour
     [Tooltip("正面或者反面")]//dont use this temporarily
     public bool isOnTheFrontSide;
     [Tooltip("由高度决定，如果要做动画，这个变量的属性应被更改为animator")]//it seems we will not use sprite
-    public Sprite cellSprite;
+    public Mesh cellMesh;
     [Tooltip("格子所带的元素，可以为NONE")]
-    public EnumDefinition.Element cellElement;
+    public Inventory.Element cellElement;
     [Tooltip("决定这个格是不是神秘格子或者要塞或者别的什么特殊效果，可以为NONE")]
-    public EnumDefinition.SpecialGridType specialCellType;
+    public Inventory.SpecialCellType specialCellType;
     [Tooltip("格子的所有sprite素材，特效，粒子系统预制体等都在这个类里")]
     public GridInventory inventory;
     [Tooltip("这是该物体的Outline Shader，以用于高亮，注意需要实例化一个之后再更改，不然的话所有的shader都会被改（已封装，不用管）")]
@@ -41,62 +41,52 @@ public class HexCell : MonoBehaviour
         switch (altitude)
         {
             case -3:
-                cellSprite = inventory.mountain3;
+                cellMesh = inventory.mountain3;
                 break;
             case -2:
-                cellSprite = inventory.hill2;
+                cellMesh = inventory.hill2;
                 break;
             case -1:
-                cellSprite = inventory.hill1;
+                cellMesh = inventory.hill1;
                 break;
             case 0:
-                cellSprite = inventory.ground0;
+                cellMesh = inventory.ground0;
                 break;
             case 1:
-                cellSprite = inventory.basin_1;
+                cellMesh = inventory.basin_1;
                 break;
             case 2:
-                cellSprite = inventory.valley_2;
+                cellMesh = inventory.valley_2;
                 break;
             case 3:
-                cellSprite = inventory.pit_3;
+                cellMesh = inventory.pit_3;
                 break;
             default:
-                cellSprite = inventory.hole;
+                cellMesh = inventory.hole;
                 break;
-        }//不同的高度对应不同的贴图，之后更新贴图
-        GetComponent<SpriteRenderer>().sprite = cellSprite;
+        }
+        //add special effect
+        //add partical system
     }
     /// <summary>
     /// 将这一块地图格子高亮
     /// </summary>
     /// <param name="highLightMode">高亮模式，可以为NONE</param>
-    public void HighlightCell(EnumDefinition.HighlightMode highLightMode)
+    public void HighlightCell(Inventory.HighlightMode highLightMode)
     {
         switch (highLightMode)
         {
-            case EnumDefinition.HighlightMode.mouseTarget:
-                thisOutlineMaterial.SetColor("lineColor", Color.grey);
-                thisOutlineMaterial.SetFloat("lineWidth", 20);
+            case Inventory.HighlightMode.mouseTarget:
                 break;
-            case EnumDefinition.HighlightMode.attackTarget:
-                thisOutlineMaterial.SetColor("lineColor", Color.red);
-                thisOutlineMaterial.SetFloat("lineWidth", 20);
+            case Inventory.HighlightMode.attackTarget:
                 break;
-            case EnumDefinition.HighlightMode.attackRange:
-                thisOutlineMaterial.SetColor("lineColor", Color.green);
-                thisOutlineMaterial.SetFloat("lineWidth", 20);
+            case Inventory.HighlightMode.attackRange:
                 break;
-            case EnumDefinition.HighlightMode.moveRange:
-                thisOutlineMaterial.SetColor("lineColor", Color.blue);
-                thisOutlineMaterial.SetFloat("lineWidth", 20);
+            case Inventory.HighlightMode.moveRange:
                 break;
-            case EnumDefinition.HighlightMode.moveTarget:
-                thisOutlineMaterial.SetColor("lineColor", Color.black);
-                thisOutlineMaterial.SetFloat("lineWidth", 20);
+            case Inventory.HighlightMode.moveTarget:
                 break;
-            case EnumDefinition.HighlightMode.None:
-                thisOutlineMaterial.SetFloat("lineWidth", 0);
+            case Inventory.HighlightMode.None:
                 break;
         }
     }
@@ -104,7 +94,7 @@ public class HexCell : MonoBehaviour
     /// 地图上的元素反应，输入某元素，改变Element，产生反应，并达到某效果
     /// </summary>
     /// <param name="elementIn">传入的元素</param>
-    public void ElementReactionOnMap(EnumDefinition.Element elementIn)
+    public void ElementReactionOnMap(Inventory.Element elementIn)
     {
 
     }
@@ -129,24 +119,23 @@ public class HexCell : MonoBehaviour
     /// </summary>
     public void MapGridOnClick()
     {
-
+        
     }
     #endregion
 
     #region methods for Self to use
     /// <summary>
-    /// 这个方法用来生成一个单独的material，用来单独更改某一个gameobject的material而不至于全部更改  
+    /// 这个方法用来将该物体初始化，初始化的函数都可以放在这里 
     /// </summary>
-    void MaterialInitialize()
+    void Initialize()
     {
-        thisOutlineMaterial = Instantiate(thisOutlineMaterial);
-        GetComponent<SpriteRenderer>().material = thisOutlineMaterial;
+        cellMesh = GetComponent<MeshFilter>().mesh;
     }
     #endregion
 
     private void Start()
     {
-        MaterialInitialize();
+        Initialize();
         UpdateCell();//脚本实例化时进行一次更新
     }
 }

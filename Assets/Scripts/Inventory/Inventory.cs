@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Inventory", menuName = "Inventory")]
+//这个类储存了所有的大部分脚本都要用到的信息如枚举定义，数据配置等
 public class Inventory : ScriptableObject
 {
     public enum Element //this is the element types 

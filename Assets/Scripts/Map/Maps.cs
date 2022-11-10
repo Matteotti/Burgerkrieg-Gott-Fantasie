@@ -9,5 +9,4 @@ public class Maps : MonoBehaviour
     public GameObject front;
     [Tooltip("HexMap for backMap")]
     public GameObject back;
-    
 }

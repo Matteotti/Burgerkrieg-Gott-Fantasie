@@ -67,11 +67,11 @@ public class HexGrid : MonoBehaviour
     /// </summary>
     /// <param name="target">一个包含了所有的待更改格子的List<MapGrid>变量</param>
     /// <param name="highlightMode">高亮模式，可以为None</param>
-    public void HighlightmapCells(List<MapGrid> target, EnumDefinition.HighlightMode highlightMode)
+    public void HighlightmapCells(List<HexCell> target, Inventory.HighlightMode highlightMode)
     {
-        foreach(MapGrid grid in target)
+        foreach(HexCell grid in target)
         {
-            grid.HighlightGrid(highlightMode);
+            grid.HighlightCell(highlightMode);
         }
     }
 
@@ -80,11 +80,11 @@ public class HexGrid : MonoBehaviour
     /// </summary>
     /// <param name="target">目标格子的list</param>
     /// <param name="delta">变化量</param>
-    public void ChangemapCellsAltitude(List<MapGrid> target, int delta)
+    public void ChangemapCellsAltitude(List<HexCell> target, int delta)
     {
-        foreach (MapGrid grid in target)
+        foreach (HexCell grid in target)
         {
-            grid.thisGrid.altitude += delta;
+            grid.altitude += delta;
         }
     }
 
@@ -93,9 +93,9 @@ public class HexGrid : MonoBehaviour
     /// </summary>
     /// <param name="target">目标格子list</param>
     /// <param name="elementIn">传入的元素</param>
-    public void ElementalReaction(List<MapGrid> target, EnumDefinition.Element elementIn)
+    public void ElementalReaction(List<HexCell> target, Inventory.Element elementIn)
     {
-        foreach (MapGrid grid in target)
+        foreach (HexCell grid in target)
         {
             grid.ElementReactionOnMap(elementIn);
         }
@@ -108,7 +108,7 @@ public class HexGrid : MonoBehaviour
     /// <param name="chess">棋子</param>
     public void OnStand(Vector3Int gridHexPos, GameObject chess)
     {
-        mapCells[gridHexPos.x, gridHexPos.y].GetComponent<MapGrid>().OnChessStand(chess);
+        mapCells[gridHexPos.x, gridHexPos.y].GetComponent<HexCell>().OnChessStand(chess);
     }
 
     /// <summary>
@@ -118,7 +118,7 @@ public class HexGrid : MonoBehaviour
     /// <param name="chess">棋子</param>
     public void OnInterface(Vector3Int gridHexPos, GameObject chess)
     {
-        mapCells[gridHexPos.x, gridHexPos.y].GetComponent<MapGrid>().OnChessInterface(chess);
+        mapCells[gridHexPos.x, gridHexPos.y].GetComponent<HexCell>().OnChessInterface(chess);
     }
 
     /// <summary>
@@ -127,7 +127,7 @@ public class HexGrid : MonoBehaviour
     /// <param name="hexPos">地图格子的cell坐标</param>
     public void Click(Vector3Int hexPos)
     {
-        mapCells[hexPos.x, hexPos.y].GetComponent<MapGrid>().MapGridOnClick();
+        mapCells[hexPos.x, hexPos.y].GetComponent<HexCell>().MapGridOnClick();
     }
 
     /// <summary>
@@ -137,12 +137,9 @@ public class HexGrid : MonoBehaviour
     /// <param name="gridPrefab">用于生成的gameobject预制体</param>
     /// <param name="targetBase">储存目标格子的所有属性的MapGrid基类</param>
     /// <param name="isOnTheFrontSide">是否位于正面地图</param>
-    public void InstantiateGrid(Vector3Int targetPos, MapGridBase targetBase)
+    public void InstantiateGrid(Vector3Int targetPos, GameObject cellPrefab)
     {
-        GameObject temp = mapCells[targetPos.x, targetPos.y];
-        temp.SetActive(true);
-        temp.GetComponent<MapGrid>().thisGrid = targetBase;
-        temp.GetComponent<MapGrid>().UpdateGrid();
+        
     }
 
     /// <summary>
@@ -159,23 +156,6 @@ public class HexGrid : MonoBehaviour
     #endregion
 
     #region methods for Self to use
-    /// <summary>
-    /// 该函数将以自身坐标为起点，以类似于UnityGridLayoutGrounp的方式对其子物体进行重排列成六边形网格状，并且将相应格子存入mapCells二维数组
-    /// </summary>
-    /// <param name="maxRaw">最大列数，亦即到这个列数了就换行</param>
-    /// <param name="rawGap">行间距</param>
-    /// <param name="lineGap">列间距</param>
-    void GridPermutation(int maxRaw, float rawGap, float lineGap)
-    {
-        int rawIndex = 0, lineIndex = 0;
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            lineIndex = i / maxRaw;
-            rawIndex = i % maxRaw;
-            transform.GetChild(i).transform.position = transform.position + new Vector3(rawIndex * rawGap, lineIndex * lineGap, 0) + ((lineIndex % 2 == 1) ? new Vector3(rawGap / 2, 0, 0) : Vector3.zero);
-            mapCells[rawIndex, lineIndex] = transform.GetChild(i).gameObject;
-        }
-    }
 
     #endregion
 
@@ -189,7 +169,7 @@ public class HexGrid : MonoBehaviour
     #endregion
     private void Start()
     {
-        GridPermutation(gridLayoutGrounpMaxRaw, gridLayoutGrounpRawGap, gridLayoutGrounpLineGap);
+
     }
     private void Update()
     {
