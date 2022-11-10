@@ -1,7 +1,7 @@
 # Burgerkrieg-Gott-Fantasie
 Course project of ZJU Computer Game Programming Design :)
 
-version 2022.11.10, latest edit: yyz
+version 2022.11.10.2, latest edit: yyz
 
 我把一些脚本的名字改了（比如那个在编辑器运行的脚本改成了update什么什么的），想到时候把所有需要编辑时更新的东西都写进去   
 动态更改mesh已经完成，方法是挂载meshRenderer和meshFilter，然后更改meshFilter里的mesh值即可   
@@ -24,3 +24,5 @@ UpdateCell函数也需要更改格子的特效与粒子系统，需要完善
 
 正在解决：
 如何高亮？需要什么效果？  暂时想着用边缘高亮
+-------
+更新，高亮已解决，现在可以让鼠标检测到的格子高亮了，但是插件只支持自定义三个颜色，准备自己改改
