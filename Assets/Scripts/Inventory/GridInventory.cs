@@ -9,7 +9,7 @@ public class GridInventory : ScriptableObject
     [System.Serializable]
     public struct Cell{
         public Mesh mesh;
-        public Material meterial;
+        public Material material;
     };
     [Tooltip("这里是不同地形的mesh文件，前面是名字后面是高度绝对值,带有“_”的表示高度是负数")]
     public Cell mountain3, hill2, hill1, ground0, pit_1, basin_2, valley_3, hole;

@@ -14,25 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mountain3:
     mesh: {fileID: 8715605637038790130, guid: cec8b140dbc76a24d8d6aa32c25c2454, type: 3}
-    meterial: {fileID: 0}
+    material: {fileID: 2100000, guid: 861b857b29d5f1d49ae2fe7d414b1a2f, type: 2}
   hill2:
     mesh: {fileID: 2009735708707154172, guid: dcfa722d306e45e4ebd6f04ce452f208, type: 3}
-    meterial: {fileID: 0}
+    material: {fileID: 2100000, guid: 861b857b29d5f1d49ae2fe7d414b1a2f, type: 2}
   hill1:
     mesh: {fileID: -6667049320550289732, guid: 24bbdf2c32dca2a43ba931e930e987e2, type: 3}
-    meterial: {fileID: 0}
+    material: {fileID: 2100000, guid: 861b857b29d5f1d49ae2fe7d414b1a2f, type: 2}
   ground0:
-    mesh: {fileID: 0}
-    meterial: {fileID: 0}
+    mesh: {fileID: 3728581997490464251, guid: 548b9a1902ff6ec479644c2d9beb387f, type: 3}
+    material: {fileID: 2100000, guid: 861b857b29d5f1d49ae2fe7d414b1a2f, type: 2}
   pit_1:
     mesh: {fileID: 6192000938839963801, guid: 094317165b8e32046a0eab5091168d17, type: 3}
-    meterial: {fileID: 0}
+    material: {fileID: 2100000, guid: 861b857b29d5f1d49ae2fe7d414b1a2f, type: 2}
   basin_2:
     mesh: {fileID: 6565540168617807641, guid: a2f1340f466595546a026be965262876, type: 3}
-    meterial: {fileID: 0}
+    material: {fileID: 2100000, guid: 861b857b29d5f1d49ae2fe7d414b1a2f, type: 2}
   valley_3:
     mesh: {fileID: 632395698035700612, guid: 617cf0e029fe9d146b6c60bb2b9bf2b8, type: 3}
-    meterial: {fileID: 0}
+    material: {fileID: 2100000, guid: 861b857b29d5f1d49ae2fe7d414b1a2f, type: 2}
   hole:
     mesh: {fileID: 4227276433756819450, guid: b831d313f80023b4ab350cc246822637, type: 3}
-    meterial: {fileID: 0}
+    material: {fileID: 2100000, guid: 861b857b29d5f1d49ae2fe7d414b1a2f, type: 2}

@@ -39,7 +39,7 @@ public class HexCell : MonoBehaviour
          */
         //更新cellMesh
         MeshFilter cellMesh = GetComponent<MeshFilter>();
-        cellMesh.mesh = altitude switch
+        cellMesh.sharedMesh = altitude switch
         {
             3 => inventory.mountain3.mesh,
             2 => inventory.hill2.mesh,
@@ -49,6 +49,19 @@ public class HexCell : MonoBehaviour
             -2 => inventory.basin_2.mesh,
             -3 => inventory.valley_3.mesh,
             _ => inventory.hole.mesh,
+        };
+        //update material
+        MeshRenderer cellRenderer = GetComponent<MeshRenderer>();
+        cellRenderer.sharedMaterial = altitude switch
+        {
+            3 => inventory.mountain3.material,
+            2 => inventory.hill2.material,
+            1 => inventory.hill1.material,
+            0 => inventory.ground0.material,
+            -1 => inventory.pit_1.material,
+            -2 => inventory.basin_2.material,
+            -3 => inventory.valley_3.material,
+            _ => inventory.hole.material,
         };
         //更新meshCollider
         GetComponent<MeshCollider>().sharedMesh = cellMesh.sharedMesh;

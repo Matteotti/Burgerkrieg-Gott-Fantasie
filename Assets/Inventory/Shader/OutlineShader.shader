@@ -15,7 +15,7 @@ Shader "lcl/shader2D/outline"
 
 			Pass
 			{
-				Cull Back//±³ÃæÌŞ³ı
+				Cull Back//Â±Â³ÃƒÃ¦ÃŒÃÂ³Ã½
 				CGPROGRAM
 				#pragma vertex vert
 				#pragma vertex vert
