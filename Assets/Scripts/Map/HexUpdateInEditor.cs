@@ -27,21 +27,9 @@ public class HexUpdateInEditor : MonoBehaviour
             float delZ = inventory.hexEdgeLength * cell.hexCoord.y * 3 / 2;
             Vector3 delTrans = new Vector3(delX, 0.0F, delZ);
             this.transform.position = map.transform.position + delTrans;
+            cell.UpdateCell();
         }
-        UpdateGridMesh();
+        
     }
-    void UpdateGridMesh()
-    {
-        cellMeshFilter.mesh = cell.altitude switch
-        {
-            3 => gridInventory.mountain3,
-            2 => gridInventory.hill2,
-            1 => gridInventory.hill1,
-            0 => gridInventory.ground0,
-            -1 => gridInventory.basin_1,
-            -2 => gridInventory.valley_2,
-            -3 => gridInventory.pit_3,
-            _ => gridInventory.hole,
-        };
-    }
+
 }

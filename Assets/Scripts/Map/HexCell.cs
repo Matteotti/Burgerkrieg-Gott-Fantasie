@@ -15,8 +15,6 @@ public class HexCell : MonoBehaviour
     public bool highLighted;
     [Tooltip("正面或者反面")]//dont use this temporarily
     public bool isOnTheFrontSide;
-    [Tooltip("由高度决定，如果要做动画，这个变量的属性应被更改为animator")]//it seems we will not use sprite
-    public Mesh cellMesh;
     [Tooltip("格子所带的元素，可以为NONE")]
     public Inventory.Element cellElement;
     [Tooltip("决定这个格是不是神秘格子或者要塞或者别的什么特殊效果，可以为NONE")]
@@ -40,19 +38,20 @@ public class HexCell : MonoBehaviour
          *但是这里不包含高亮状态的更新
          */
         //更新cellMesh
-        cellMesh = altitude switch
+        MeshFilter cellMesh = GetComponent<MeshFilter>();
+        cellMesh.mesh = altitude switch
         {
-            3 => inventory.mountain3,
-            2 => inventory.hill2,
-            1 => inventory.hill1,
-            0 => inventory.ground0,
-            -1 => inventory.basin_1,
-            -2 => inventory.valley_2,
-            -3 => inventory.pit_3,
-            _ => inventory.hole,
+            3 => inventory.mountain3.mesh,
+            2 => inventory.hill2.mesh,
+            1 => inventory.hill1.mesh,
+            0 => inventory.ground0.mesh,
+            -1 => inventory.pit_1.mesh,
+            -2 => inventory.basin_2.mesh,
+            -3 => inventory.valley_3.mesh,
+            _ => inventory.hole.mesh,
         };
         //更新meshCollider
-        GetComponent<MeshCollider>().sharedMesh = cellMesh;
+        GetComponent<MeshCollider>().sharedMesh = cellMesh.sharedMesh;
         //add special effect
         //add partical system
     }
@@ -121,7 +120,7 @@ public class HexCell : MonoBehaviour
     /// </summary>
     void Initialize()
     {
-        cellMesh = GetComponent<MeshFilter>().mesh;
+        //cellMesh = GetComponent<MeshFilter>().mesh;
     }
     #endregion
 
