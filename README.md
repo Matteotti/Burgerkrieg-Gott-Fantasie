@@ -1,7 +1,11 @@
 # Burgerkrieg-Gott-Fantasie
 Course project of ZJU Computer Game Programming Design :)
 
+## version 2022.11.12.2 latest edit: yyz
 
+增加了点击地图块在UI上显示信息
+
+补全了生成地图块和删除地图块的函数，但是由于依赖于HexToWorldPos函数，暂时还不能用，等HexToWorldPos函数写好后就OK了
 
 ## version 2022.11.12 latest edit: gtz
 
