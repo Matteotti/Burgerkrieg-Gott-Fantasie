@@ -44,6 +44,15 @@ public class MouseCursorCheck : MonoBehaviour
                     lastGameObject.GetComponent<HexCell>().HighlightCell(Inventory.HighlightMode.None);
                 }
             }
+            //如果鼠标左键按下
+            if (Input.GetMouseButtonDown(0))
+            {
+                //如果碰撞体的tag是cell
+                if (hit.collider.tag == "Cell")
+                {
+                    hit.collider.GetComponent<HexCell>().MapGridOnClick(Inventory.HexCellClickMode.Info, 0);
+                }
+            }
         }
         else
         {

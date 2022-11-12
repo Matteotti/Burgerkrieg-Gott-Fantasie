@@ -1,6 +1,7 @@
 using cakeslice;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 public class HexCell : MonoBehaviour
@@ -23,7 +24,6 @@ public class HexCell : MonoBehaviour
     public GridInventory inventory;
     [Tooltip("这是该物体的Outline Shader，以用于高亮，注意需要实例化一个之后再更改，不然的话所有的shader都会被改（已封装，不用管）")]
     public Material thisOutlineMaterial;
-
     #endregion
 
     #region methods for Map to use
@@ -119,11 +119,30 @@ public class HexCell : MonoBehaviour
 
     }
     /// <summary>
-    /// 鼠标点击该格子时执行，也许是显示信息？
+    /// 鼠标点击该格子时执行，要做什么由传入的enum决定,第二个可选参数为要把格子的某个属性更改为的目标数字，如高度，enum的index等等，默认为0
     /// </summary>
-    public void MapGridOnClick()
+    /// <param name="clickMode">点击需要格子做些什么？</param>
+    /// <param name="targetNum">可选的传入整数，标志着目标值什么什么的</param>
+    /// <returns>返回这个格子的实例类：hexCell</returns>
+    public HexCell MapGridOnClick(Inventory.HexCellClickMode clickMode, [DefaultValue(0)] int targetNum)
     {
-        
+        switch(clickMode)
+        {
+            case Inventory.HexCellClickMode.Altitude:
+                altitude = targetNum;
+                break;
+            case Inventory.HexCellClickMode.Element:
+                cellElement = (Inventory.Element)targetNum;
+                break;
+            case Inventory.HexCellClickMode.Target:
+                //仅仅是把格子作为目标，什么也不做
+                break;
+            case Inventory.HexCellClickMode.Info:
+                ShowCellInfo();
+                //显示格子信息，我做个UI
+                break;
+        }
+        return this;
     }
     #endregion
 
@@ -134,6 +153,11 @@ public class HexCell : MonoBehaviour
     void Initialize()
     {
         //cellMesh = GetComponent<MeshFilter>().mesh;
+    }
+    void ShowCellInfo()
+    {
+        Debug.Log("ShowInfo Height Element Cood");
+        //显示格子信息，我做个UI
     }
     #endregion
 

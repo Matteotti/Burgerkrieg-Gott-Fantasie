@@ -29,7 +29,5 @@ public class HexUpdateInEditor : MonoBehaviour
             this.transform.position = map.transform.position + delTrans;
             cell.UpdateCell();
         }
-        
     }
-
 }

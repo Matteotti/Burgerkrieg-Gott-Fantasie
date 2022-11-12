@@ -39,9 +39,5 @@ public class CameraController : MonoBehaviour
             transform.Translate(forward * cameraSpeed * Time.deltaTime, Space.World);
         }
         mainCamera.fieldOfView = Mathf.Clamp(mainCamera.fieldOfView - scroll * cameraZoomSpeed, cameraZoomMin, cameraZoomMax);
-        //Debug.Log("mousePosition " + mousePositionOnScreen);
-        //Debug.Log("Width " + maxToleratedDistanceWidth);
-        //Debug.Log("Height " + maxToleratedDistanceHeight);
-        //Debug.Log("Width & Height " + Screen.width + " " + Screen.height);
     }
 }

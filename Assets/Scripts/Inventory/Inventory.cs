@@ -36,6 +36,14 @@ public class Inventory : ScriptableObject
         skillTarget,
         None
     }
+    
+    public enum HexCellClickMode
+    {
+        Info,
+        Altitude,
+        Element,
+        Target
+    }
 
     public float hexEdgeLength = 1.0f;
 }
