@@ -36,3 +36,8 @@ MonoBehaviour:
   hole:
     mesh: {fileID: 4227276433756819450, guid: b831d313f80023b4ab350cc246822637, type: 3}
     material: {fileID: 2100000, guid: 861b857b29d5f1d49ae2fe7d414b1a2f, type: 2}
+  elementEffects:
+    red: {fileID: 4477563036070920972, guid: 31800888eafb6bc4f8ad17c3026f2921, type: 3}
+    green: {fileID: 4477563036070920972, guid: 9cf1d156690e7254685a259cb6acd2a9, type: 3}
+    blue: {fileID: 4477563036070920972, guid: 9a0adb1e86fe4e9458da061f53b8de67, type: 3}
+    yellow: {fileID: 4477563036070920972, guid: 22059a1a61c4da8408efaa8694dece15, type: 3}

@@ -52,8 +52,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 43f9a6e9368af3f4b8ec84c88bd57f7d, type: 2}
   gridInventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
   map: {fileID: 0}
-  cell: {fileID: 7988074305754039144}
-  cellMeshFilter: {fileID: 3899115022994288541}
+  shouldUpdate: 1
 --- !u!114 &7988074305754039144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +71,7 @@ MonoBehaviour:
   isOnTheFrontSide: 0
   cellElement: 5
   specialCellType: 0
-  inventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
+  gridInventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
   thisOutlineMaterial: {fileID: 0}
 --- !u!33 &3899115022994288541
 MeshFilter:

@@ -21,7 +21,7 @@ public class HexCell : MonoBehaviour
     [Tooltip("决定这个格是不是神秘格子或者要塞或者别的什么特殊效果，可以为NONE")]
     public Inventory.SpecialCellType specialCellType;
     [Tooltip("格子的所有sprite素材，特效，粒子系统预制体等都在这个类里")]
-    public GridInventory inventory;
+    public GridInventory gridInventory;
     [Tooltip("这是该物体的Outline Shader，以用于高亮，注意需要实例化一个之后再更改，不然的话所有的shader都会被改（已封装，不用管）")]
     public Material thisOutlineMaterial;
     #endregion
@@ -41,33 +41,56 @@ public class HexCell : MonoBehaviour
         MeshFilter cellMesh = GetComponent<MeshFilter>();
         cellMesh.sharedMesh = altitude switch
         {
-            3 => inventory.mountain3.mesh,
-            2 => inventory.hill2.mesh,
-            1 => inventory.hill1.mesh,
-            0 => inventory.ground0.mesh,
-            -1 => inventory.pit_1.mesh,
-            -2 => inventory.basin_2.mesh,
-            -3 => inventory.valley_3.mesh,
-            _ => inventory.hole.mesh,
+            3 => gridInventory.mountain3.mesh,
+            2 => gridInventory.hill2.mesh,
+            1 => gridInventory.hill1.mesh,
+            0 => gridInventory.ground0.mesh,
+            -1 => gridInventory.pit_1.mesh,
+            -2 => gridInventory.basin_2.mesh,
+            -3 => gridInventory.valley_3.mesh,
+            _ => gridInventory.hole.mesh,
         };
         //update material
         MeshRenderer cellRenderer = GetComponent<MeshRenderer>();
         cellRenderer.sharedMaterial = altitude switch
         {
-            3 => inventory.mountain3.material,
-            2 => inventory.hill2.material,
-            1 => inventory.hill1.material,
-            0 => inventory.ground0.material,
-            -1 => inventory.pit_1.material,
-            -2 => inventory.basin_2.material,
-            -3 => inventory.valley_3.material,
-            _ => inventory.hole.material,
+            3 => gridInventory.mountain3.material,
+            2 => gridInventory.hill2.material,
+            1 => gridInventory.hill1.material,
+            0 => gridInventory.ground0.material,
+            -1 => gridInventory.pit_1.material,
+            -2 => gridInventory.basin_2.material,
+            -3 => gridInventory.valley_3.material,
+            _ => gridInventory.hole.material,
         };
         //更新meshCollider
         GetComponent<MeshCollider>().sharedMesh = cellMesh.sharedMesh;
         //add special effect
+
         //add partical system
+        //check element
+        GameObject cellElementEffect = cellElement switch
+        {
+            Inventory.Element.red => gridInventory.elementEffects.red,
+            Inventory.Element.blue => gridInventory.elementEffects.blue,
+            Inventory.Element.green => gridInventory.elementEffects.green,
+            Inventory.Element.yellow => gridInventory.elementEffects.yellow,
+            _ => null
+        };
+        //Debug.Log(cellElementEffect);
+        //delete previous effects
+        for(int i = 0; i<gameObject.transform.childCount; i++){
+                GameObject.DestroyImmediate(gameObject.transform.GetChild(i).gameObject);   
+        }
+        //add new effects if should
+        if (cellElementEffect != null){
+            GameObject effectInstance = GameObject.Instantiate(cellElementEffect,transform.position,transform.rotation);
+            effectInstance.transform.SetParent(gameObject.transform);
+        }
     }
+
+
+
     /// <summary>
     /// 将这一块地图格子高亮
     /// </summary>

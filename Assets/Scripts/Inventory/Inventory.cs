@@ -8,12 +8,11 @@ public class Inventory : ScriptableObject
 {
     public enum Element //this is the element types 
     {
-        Fire,
-        Water,
-        Thunder,
-        Ice,
-        Ground,
-        None
+        red,
+        blue,
+        green,
+        yellow,
+        none
     }
 
 

@@ -9,9 +9,9 @@ public class HexUpdateInEditor : MonoBehaviour
     public Inventory inventory;
     public GridInventory gridInventory;
     [SerializeField] private GameObject map;//the parent map(front or back)
-    public HexCell cell;
-    public MeshFilter cellMeshFilter;
-
+    HexCell cell;
+    MeshFilter cellMeshFilter;
+    public bool shouldUpdate = false;
     void Start()
     {
         cell = GetComponent<HexCell>();
@@ -20,7 +20,7 @@ public class HexUpdateInEditor : MonoBehaviour
 
     void Update()
     {
-        if (this.transform.parent != null && inventory != null)
+        if (shouldUpdate && this.transform.parent != null && inventory != null)
         {//move the cell when hexCoord is updated
             map = this.transform.parent.gameObject;//if wirtethis in Awake(), got an error...So it comes here
             float delX = inventory.hexEdgeLength * cell.hexCoord.x * Mathf.Sqrt(3) - inventory.hexEdgeLength * cell.hexCoord.y * Mathf.Sqrt(3) / 2;
