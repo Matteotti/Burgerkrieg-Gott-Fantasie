@@ -1,13 +1,18 @@
 # Burgerkrieg-Gott-Fantasie
 Course project of ZJU Computer Game Programming Design :)
+## RequirementDoc
+### models for map
+地图组模型需求：
+    
 
-## version 2022.11.12.2 latest edit: yyz
+## Versions
+### version 2022.11.12.2 latest edit: yyz
 
 增加了点击地图块在UI上显示信息
 
 补全了生成地图块和删除地图块的函数，但是由于依赖于HexToWorldPos函数，暂时还不能用，等HexToWorldPos函数写好后就OK了
 
-## version 2022.11.12 latest edit: gtz
+### version 2022.11.12 latest edit: gtz
 
 增加了几个简单的粒子系统（后续美工替换就行）
 
@@ -19,17 +24,17 @@ Course project of ZJU Computer Game Programming Design :)
 
 在更新脚本加入了一个bool用来控制Update的开关（实在是黔驴技穷没办法了，只好麻烦下操作人员）。现在的操作是，打开shouleUpdate，编辑地图块，然后关闭。
 
-## version 2022.11.12.1 latest edit: yyz
+### version 2022.11.12.1 latest edit: yyz
 
 增加了相机
 
-## version 2022.11.11 latest edit: gtz
+### version 2022.11.11 latest edit: gtz
 
 小修了mesh的一些引用问题（更高效了废话少了）
 
 增加了材质切换。目前只有一个默认材质。
 
-## version 2022.11.10.2, latest edit: yyz   
+### version 2022.11.10.2, latest edit: yyz   
 
 今天把镜头移动给写了，把鼠标点击格子显示信息的框架搭出来了，我下午做一点UI，然后再写一下生成格子和销毁格子的函数  
 
