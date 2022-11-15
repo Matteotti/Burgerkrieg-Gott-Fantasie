@@ -101,6 +101,8 @@ public class HexCell : MonoBehaviour
         switch (highLightMode)
         {
             case Inventory.HighlightMode.mouseTarget:
+                outline.enabled = true;
+                outline.color = 0;
                 break;
             case Inventory.HighlightMode.attackTarget:
                 break;
@@ -109,8 +111,6 @@ public class HexCell : MonoBehaviour
             case Inventory.HighlightMode.moveRange:
                 break;
             case Inventory.HighlightMode.moveTarget:
-                outline.enabled = true;
-                outline.color = 0;
                 break;
             case Inventory.HighlightMode.None:
                 outline.enabled = false;

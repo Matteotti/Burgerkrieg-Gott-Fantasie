@@ -121,14 +121,14 @@ public class HexGrid : MonoBehaviour
         mapCells[gridHexPos.x, gridHexPos.y].GetComponent<HexCell>().OnChessInterface(chess);
     }
 
-    ///// <summary>
-    ///// 点击某个地图格子时调用
-    ///// </summary>
-    ///// <param name="hexPos">地图格子的cell坐标</param>
-    //public void Click(Vector3Int hexPos)
-    //{
-    //    mapCells[hexPos.x, hexPos.y].GetComponent<HexCell>().MapGridOnClick();
-    //}
+    /// <summary>
+    /// 点击某个地图格子时调用
+    /// </summary>
+    /// <param name="hexPos">地图格子的cell坐标</param>
+    public void Click(Vector3Int hexPos)
+    {
+        mapCells[hexPos.x, hexPos.y].GetComponent<HexCell>().MapGridOnClick(Inventory.HexCellClickMode.Info, 0);
+    }
 
     /// <summary>
     /// 该函数在指定位置上生成一个地图格子

@@ -30,7 +30,7 @@ public class MouseCursorCheck : MonoBehaviour
                     lastGameObject.GetComponent<HexCell>().HighlightCell(Inventory.HighlightMode.None);
                 }
                 //让当前物体的高亮显示
-                hexCell.HighlightCell(Inventory.HighlightMode.moveTarget);
+                hexCell.HighlightCell(Inventory.HighlightMode.mouseTarget);
                 //将当前物体赋值给上一个物体
                 lastGameObject = hit.collider.gameObject;
             }
