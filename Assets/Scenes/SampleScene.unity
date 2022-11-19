@@ -788,6 +788,14 @@ PrefabInstance:
       propertyPath: altitude
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7988074305754039144, guid: bac21d4851f5a99469ca4c4d72aa45fb, type: 3}
+      propertyPath: cellElement
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988074305754039144, guid: bac21d4851f5a99469ca4c4d72aa45fb, type: 3}
+      propertyPath: highLighted
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8860847373279181644, guid: bac21d4851f5a99469ca4c4d72aa45fb, type: 3}
       propertyPath: map
       value: 
@@ -26997,7 +27005,6 @@ MonoBehaviour:
   cameraZoomSpeed: 100
   cameraZoomMin: 30
   cameraZoomMax: 100
-  maxToleratedDistanceProportion: 0.1
   mainCamera: {fileID: 0}
 --- !u!1001 &1006997977
 PrefabInstance:
