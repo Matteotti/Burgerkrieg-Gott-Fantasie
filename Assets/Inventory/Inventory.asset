@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   hexEdgeLength: 10
+  hexScale: 1

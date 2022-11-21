@@ -4,24 +4,50 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
-public class HexCell : MonoBehaviour
+using UnityEngine.EventSystems;
+public class HexCell : MonoBehaviour,IPointerDownHandler
 {
-
+    public void OnPointerDown(PointerEventData eventData){
+        Debug.Log("DOWN");
+    }
     #region variables
-    [Tooltip("该格子的六边形坐标")]
-    public Vector2Int hexCoord;
+    [Tooltip("该格子的六边形坐标，游戏内不能修改")]
+    [SerializeField]
+    Vector2Int _hexCoord;
+    public Vector2Int hexCoord{
+        get{return _hexCoord;}
+    }
+    
     [Tooltip("该单元格高度")]
-    public int altitude;
-    [Tooltip("是否被临时高亮")]
-    public bool highLighted;
+    [SerializeField]
+    int _altitude;
+    public int altitude{
+        get{return _altitude;}
+        set{_altitude = (int)Mathf.Clamp(value, -4, 4); UpdateCell();}
+    }
+    
     [Tooltip("正面或者反面")]//dont use this temporarily
     public bool isOnTheFrontSide;
+
     [Tooltip("格子所带的元素，可以为NONE")]
-    public Inventory.Element cellElement;
+    [SerializeField]
+    Inventory.Element _cellElement;
+    public Inventory.Element cellElement{
+        get{return _cellElement;}
+        set{_cellElement = value; UpdateCell();}
+    }
+
     [Tooltip("决定这个格是不是神秘格子或者要塞或者别的什么特殊效果，可以为NONE")]
-    public Inventory.SpecialCellType specialCellType;
+    [SerializeField]
+    Inventory.SpecialCellType _specialCellType;
+    public Inventory.SpecialCellType specialCellType{
+        get{return _specialCellType;}
+        set{_specialCellType = value; UpdateCell();}
+    }
+
     [Tooltip("格子的所有sprite素材，特效，粒子系统预制体等都在这个类里")]
     public GridInventory gridInventory;
+
     [Tooltip("这是该物体的Outline Shader，以用于高亮，注意需要实例化一个之后再更改，不然的话所有的shader都会被改（已封装，不用管）")]
     public Material thisOutlineMaterial;
     #endregion
@@ -31,7 +57,7 @@ public class HexCell : MonoBehaviour
     /// 根据全局变量thisGrid来更新当前地图单元
     /// </summary>
     public void UpdateCell()
-    {
+    {//Debug.Log("CellUpdated");
         /*如果存在元素，这个单元格会被施加特效
          *单元格对应的模型材质等资源引用，由高度和附近的单元格共同决定（比如高度相同的两座山连着形成山脉）
          *这些也需要更新，我还没写
@@ -68,7 +94,7 @@ public class HexCell : MonoBehaviour
         //add special effect
 
         //add partical system
-        //check element
+            //check element
         GameObject cellElementEffect = cellElement switch
         {
             Inventory.Element.red => gridInventory.elementEffects.red,
@@ -77,15 +103,16 @@ public class HexCell : MonoBehaviour
             Inventory.Element.yellow => gridInventory.elementEffects.yellow,
             _ => null
         };
-        //Debug.Log(cellElementEffect);
-        //delete previous effects
+            //Debug.Log(cellElementEffect);
+            //delete previous effects
         for(int i = 0; i<gameObject.transform.childCount; i++){
                 GameObject.DestroyImmediate(gameObject.transform.GetChild(i).gameObject);   
         }
-        //add new effects if should
+            //add new effects if should
         if (cellElementEffect != null){
             GameObject effectInstance = GameObject.Instantiate(cellElementEffect,transform.position,transform.rotation);
             effectInstance.transform.SetParent(gameObject.transform);
+            effectInstance.transform.localScale = new Vector3(1,1,1);
         }
     }
 
@@ -179,7 +206,7 @@ public class HexCell : MonoBehaviour
     }
     void ShowCellInfo()
     {
-        Debug.Log("ShowInfo Height Element Cood");
+        //Debug.Log("ShowInfo Height Element Cood");
         //显示格子信息，我做个UI
     }
     #endregion
@@ -191,6 +218,6 @@ public class HexCell : MonoBehaviour
     }
     private void Update()
     {
-        UpdateCell();
+        //UpdateCell(); // 不能这样更新的啊！会炸的！
     }
 }

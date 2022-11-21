@@ -4883,3 +4883,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f62f60c15723054a9fcf6bc85a45aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 43f9a6e9368af3f4b8ec84c88bd57f7d, type: 2}

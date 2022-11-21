@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MouseCursorCheck : MonoBehaviour
 {
-    public GameObject lastGameObject;//上一个被射线检测到的物体，用来让上一个物体的高亮消失
+    GameObject lastGameObject;//上一个被射线检测到的物体，用来让上一个物体的高亮消失
     private void Start()
     {
         lastGameObject = null;
@@ -51,6 +51,9 @@ public class MouseCursorCheck : MonoBehaviour
                 if (hit.collider.tag == "Cell")
                 {
                     hit.collider.GetComponent<HexCell>().MapGridOnClick(Inventory.HexCellClickMode.Info, 0);
+                    //进行土木技能释放检测
+                    //Debug.Log("SKILL");
+                    gameObject.GetComponent<BurgerkriegSkills>().UseSkill(hit.collider.gameObject.GetComponent<HexCell>().hexCoord);
                 }
             }
         }

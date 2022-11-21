@@ -5,6 +5,7 @@ using UnityEngine;
 [ExecuteAlways]
 public class ParticleControl : MonoBehaviour
 {
+    public Inventory inventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +13,7 @@ public class ParticleControl : MonoBehaviour
         //这种在新变量修改的方法非常的不合常理，但确实是这样。参见https://blog.csdn.net/BDDNH/article/details/103728429
         ParticleSystem.ShapeModule shapeModule = gameObject.GetComponent<ParticleSystem>().shape;
         shapeModule.mesh = gameObject.transform.parent.gameObject.GetComponent<MeshFilter>().sharedMesh;
-        
+        shapeModule.scale = new Vector3(inventory.hexScale, inventory.hexScale, inventory.hexScale);
     }
         
 }

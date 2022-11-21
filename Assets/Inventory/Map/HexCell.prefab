@@ -65,12 +65,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e50160e9ff781842b8b7d7c9c9ec0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hexCoord: {x: 0, y: 0}
-  altitude: 0
-  highLighted: 0
-  isOnTheFrontSide: 0
-  cellElement: 5
-  specialCellType: 0
+  _hexCoord: {x: 0, y: 0}
+  _altitude: 0
+  isOnTheFrontSide: 1
+  _cellElement: 0
+  _specialCellType: 0
   gridInventory: {fileID: 11400000, guid: 22c0d890d29c04b4f9094f7a92c1a4d6, type: 2}
   thisOutlineMaterial: {fileID: 0}
 --- !u!33 &3899115022994288541
