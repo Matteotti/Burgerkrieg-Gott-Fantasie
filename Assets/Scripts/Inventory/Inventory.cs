@@ -15,7 +15,6 @@ public class Inventory : ScriptableObject
         none
     }
 
-
     public enum SpecialCellType //this is the special map cell types
     {
         MysteriousCell,
@@ -42,6 +41,15 @@ public class Inventory : ScriptableObject
         Altitude,
         Element,
         Target
+    }
+ 
+    public enum Corps //兵种 
+    {
+        soldier,//战士
+        archer,//弓手
+        scouts,//斥候
+        crossbowman//重弩手
+
     }
 
     public float hexEdgeLength = 1.0f;
