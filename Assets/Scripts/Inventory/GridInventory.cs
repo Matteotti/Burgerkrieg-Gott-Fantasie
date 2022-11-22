@@ -30,6 +30,6 @@ public class GridInventory : ScriptableObject
 
 
     [Tooltip("Here is a map index, indexing the hexcells using hex coords")]
-    public GameObject[,] frontMap = new GameObject[100,100];//2D array cannot be seen in herarchy
+    public GameObject[,] frontMap;//2D array cannot be seen in herarchy
     public GameObject[,] backMap;
 }

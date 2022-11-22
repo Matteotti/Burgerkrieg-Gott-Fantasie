@@ -59,16 +59,20 @@ public class MapInterface : MonoBehaviour
         if(stateInventory.isFront){
             foreach(Vector2Int hexCoord in target)
             {
-                gridInventory.frontMap[hexCoord.x,hexCoord.y].GetComponent<HexCell>().altitude += delta;
-                gridInventory.backMap[hexCoord.x,hexCoord.y].GetComponent<HexCell>().altitude -= delta;
+                if(gridInventory.frontMap[hexCoord.x,hexCoord.y])
+                    gridInventory.frontMap[hexCoord.x,hexCoord.y].GetComponent<HexCell>().altitude += delta;
+                if(gridInventory.backMap[hexCoord.x,hexCoord.y])
+                    gridInventory.backMap[hexCoord.x,hexCoord.y].GetComponent<HexCell>().altitude -= delta;
             }
         }else{
             foreach(Vector2Int hexCoord in target)
             {
-                gridInventory.frontMap[hexCoord.x,hexCoord.y].GetComponent<HexCell>().altitude -= delta;
-                gridInventory.backMap[hexCoord.x,hexCoord.y].GetComponent<HexCell>().altitude += delta;
+                if(gridInventory.frontMap[hexCoord.x,hexCoord.y])
+                    gridInventory.frontMap[hexCoord.x,hexCoord.y].GetComponent<HexCell>().altitude -= delta;
+                if(gridInventory.backMap[hexCoord.x,hexCoord.y])
+                    gridInventory.backMap[hexCoord.x,hexCoord.y].GetComponent<HexCell>().altitude += delta;
             }
-        }    Debug.Log("???");   
+        }    
     }
 
     /// <summary>

@@ -31,6 +31,10 @@ Course project of ZJU Computer Game Programming Design :)
 
 ## Versions
 
+### version 2022.11.22.1 yyz&gtz
+
+BUGS FIXED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 ### version 2022.11.21.1 gtz
 
 用了连老师的模型（目前只有一个：2高度的小山。所以暂时不要使用别的高度）

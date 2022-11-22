@@ -215,6 +215,13 @@ public class HexCell : MonoBehaviour,IPointerDownHandler
     {
         Initialize();
         UpdateCell();//脚本实例化时进行一次更新
+        ///更新gridInventory里的索引(GameObject是引用类型，可以直接赋值)//怎么清理之前的索引...？         
+        if(isOnTheFrontSide){ 
+            gridInventory.frontMap[hexCoord.x,hexCoord.y] = gameObject;
+        }else{
+            gridInventory.backMap[hexCoord.x,hexCoord.y] = gameObject;
+            
+        }
     }
     private void Update()
     {

@@ -11,7 +11,7 @@ public class Maps : MonoBehaviour
     [Tooltip("HexMap for backMap")]
     public GameObject back;
 
-    void Start(){
+    void Awake(){
         gridInventory.frontMap = new GameObject[100,100];
         gridInventory.backMap = new GameObject[100,100];
     }
